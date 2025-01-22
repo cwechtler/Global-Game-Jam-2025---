@@ -13,6 +13,8 @@ public class GameController : MonoBehaviour
 	public float timeDeltaTime { get; private set; }
 	public int Score { get; set; } = 0;
 
+	public bool MouseControl { get; set; } = false;
+
 	private GameObject fadePanel;
 
 	private void Awake()
@@ -29,14 +31,14 @@ public class GameController : MonoBehaviour
 
 	private void Update()
 	{
-		if (Input.GetButtonDown("Pause")) {
-			if (!isPaused) {
-				PauseGame();
-			}
-			else {
-				ResumeGame();
-			}
-		}
+		//if (Input.GetButtonDown("Pause")) {
+		//	if (!isPaused) {
+		//		PauseGame();
+		//	}
+		//	else {
+		//		ResumeGame();
+		//	}
+		//}
 	}
 
 	public void resetGame() {

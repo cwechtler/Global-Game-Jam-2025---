@@ -1,12 +1,15 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using System.Runtime.CompilerServices;
 
 public class CanvasController : MonoBehaviour
 {
 	[SerializeField] private GameObject pausePanel;
 	[Space]
 	[SerializeField] private TextMeshProUGUI ScoreText;
+	[SerializeField] private Toggle mouseControl;
+
 
 	private Animator animator;
 
@@ -17,14 +20,17 @@ public class CanvasController : MonoBehaviour
 
 	private void Update()
 	{
-		ScoreText.text = GameController.instance.Score.ToString();
+		//ScoreText.text = GameController.instance.Score.ToString();
 
-		if (GameController.instance.isPaused) {
-			pausePanel.SetActive(true);
-		}
-		else {
-			pausePanel.SetActive(false);
-		}
+		//if (GameController.instance.isPaused) {
+		//	pausePanel.SetActive(true);
+		//}
+		//else {
+		//	pausePanel.SetActive(false);
+		//}
+
+		GameController.instance.MouseControl = mouseControl.isOn;
+
 	}
 
 	public void MainMenu()
