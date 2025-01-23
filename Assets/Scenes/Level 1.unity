@@ -200,7 +200,6 @@ GameObject:
   - component: {fileID: 54842204}
   - component: {fileID: 54842203}
   - component: {fileID: 54842202}
-  - component: {fileID: 54842205}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -283,7 +282,7 @@ ParticleSystem:
   m_GameObject: {fileID: 54842201}
   serializedVersion: 7
   lengthInSec: 5
-  simulationSpeed: 1
+  simulationSpeed: 5
   stopAction: 0
   cullingMode: 0
   ringBufferMode: 0
@@ -902,7 +901,7 @@ ParticleSystem:
     serializedVersion: 6
     enabled: 1
     type: 4
-    angle: 25
+    angle: 10
     length: 5
     boxThickness: {x: 0, y: 0, z: 0}
     radiusThickness: 1
@@ -4988,33 +4987,12 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 54842201}
   m_LocalRotation: {x: -0.7071068, y: -0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: 0.03, y: -1.6862004, z: -0.33}
-  m_LocalScale: {x: 0.5, y: 0.5, z: 0.5}
+  m_LocalPosition: {x: 0.061099797, y: 0.30936384, z: -0.33}
+  m_LocalScale: {x: 0.2, y: 0.20000002, z: 0.2}
   m_Children: []
-  m_Father: {fileID: 1685629804}
-  m_RootOrder: 2
+  m_Father: {fileID: 1364421853}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
---- !u!50 &54842205
-Rigidbody2D:
-  serializedVersion: 4
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 54842201}
-  m_BodyType: 0
-  m_Simulated: 1
-  m_UseFullKinematicContacts: 0
-  m_UseAutoMass: 0
-  m_Mass: 1
-  m_LinearDrag: 0
-  m_AngularDrag: 0.05
-  m_GravityScale: 1
-  m_Material: {fileID: 0}
-  m_Interpolate: 0
-  m_SleepingMode: 1
-  m_CollisionDetection: 0
-  m_Constraints: 0
 --- !u!1 &140839373
 GameObject:
   m_ObjectHideFlags: 0
@@ -5547,6 +5525,14 @@ PrefabInstance:
       propertyPath: m_GravityScale
       value: 0.2
       objectReference: {fileID: 0}
+    - target: {fileID: 5627357694415925408, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
+      propertyPath: maxBoostSpeed
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627357694415925408, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
+      propertyPath: minBoostSpeed
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8839901508744085154, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
       propertyPath: m_Name
       value: Bubble
@@ -5716,7 +5702,8 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: -2.06, z: 0}
   m_LocalScale: {x: 0.491, y: 1.2082845, z: 1}
-  m_Children: []
+  m_Children:
+  - {fileID: 54842204}
   m_Father: {fileID: 1685629804}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -6186,7 +6173,6 @@ Transform:
   m_Children:
   - {fileID: 1364421853}
   - {fileID: 1890457304}
-  - {fileID: 54842204}
   m_Father: {fileID: 0}
   m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
