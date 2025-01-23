@@ -172,7 +172,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 70225294}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813e9cc23b2cf43469eacb68859b523b, type: 3}
+  m_Script: {fileID: 11500000, guid: c66d5791f18f50348a42f5ae15b9c47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &70225298
@@ -354,7 +354,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 98218206}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 813e9cc23b2cf43469eacb68859b523b, type: 3}
+  m_Script: {fileID: 11500000, guid: c66d5791f18f50348a42f5ae15b9c47e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!114 &98218210
@@ -554,6 +554,7 @@ GameObject:
   - component: {fileID: 168455799}
   - component: {fileID: 168455798}
   - component: {fileID: 168455797}
+  - component: {fileID: 168455800}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -625,8 +626,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: LoseCanvas, Assembly-CSharp
+      - m_Target: {fileID: 1419184444}
+        m_TargetAssemblyTypeName: OptionsController, Assembly-CSharp
         m_MethodName: MainMenu
         m_Mode: 1
         m_Arguments:
@@ -675,6 +676,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 168455795}
   m_CullTransparentMesh: 1
+--- !u!114 &168455800
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 168455795}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c66d5791f18f50348a42f5ae15b9c47e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &282464875
 GameObject:
   m_ObjectHideFlags: 0
@@ -2037,7 +2050,7 @@ Animator:
   m_GameObject: {fileID: 1025693911}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: e489aa376ca9ccb40938cedccb5136fd, type: 2}
+  m_Controller: {fileID: 9100000, guid: ff45a1f4ebce8e4459031edf3f1c7492, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -2344,7 +2357,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1419184442}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5152e9665b413034e9b57b53d059991b, type: 3}
+  m_Script: {fileID: 11500000, guid: 22dd14c51c07e9e47a619c77641de231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   masterVolumeSlider: {fileID: 152709982}

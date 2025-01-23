@@ -48,4 +48,13 @@ public class CanvasController : MonoBehaviour
 	{
 		LevelManager.instance.QuitRequest();
 	}
+
+	public void LoseGame()
+	{
+		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
+	}
+	public void WinGame()
+	{
+		LevelManager.instance.LoadLevel(LevelManager.WinLevelString);
+	}
 }
