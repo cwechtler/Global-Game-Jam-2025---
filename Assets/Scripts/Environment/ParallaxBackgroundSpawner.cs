@@ -14,7 +14,7 @@ public class ParallaxBackgroundSpawner : MonoBehaviour
 	void Start()
 	{
 		// Initialize the first background piece
-		lastBackground = Instantiate(prefab, new Vector3(0, transformYPosition, 0), Quaternion.identity).transform;
+		lastBackground = Instantiate(prefab, new Vector3(0, transformYPosition, 1), Quaternion.identity).transform;
 		lastBackground.transform.parent = this.transform;
 	}
 
