@@ -95,6 +95,17 @@ public class Bubble : MonoBehaviour
 		}
 	}
 
+	private void OnTriggerEnter2D(Collider2D collision)
+	{
+		Debug.Log(collision.gameObject.name);
+		if (collision.gameObject.CompareTag("Collectable"))
+		{
+			Debug.Log("Collectable");
+			GameController.instance.Score++;
+			Destroy(collision.gameObject);
+		}
+	}
+
 	private void OnParticleCollision(GameObject other){
 		if (myRigidbody2D != null){
 			ParticleSystem ps = other.GetComponent<ParticleSystem>();

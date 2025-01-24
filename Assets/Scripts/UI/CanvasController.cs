@@ -20,7 +20,7 @@ public class CanvasController : MonoBehaviour
 
 	private void Update()
 	{
-		//ScoreText.text = GameController.instance.Score.ToString();
+		ScoreText.text = GameController.instance.Score.ToString();
 
 		//if (GameController.instance.isPaused) {
 		//	pausePanel.SetActive(true);
@@ -49,6 +49,8 @@ public class CanvasController : MonoBehaviour
 		LevelManager.instance.QuitRequest();
 	}
 
+
+	// to delete after adding win or loose conditions.
 	public void LoseGame()
 	{
 		LevelManager.instance.LoadLevel(LevelManager.LoseLevelString);
