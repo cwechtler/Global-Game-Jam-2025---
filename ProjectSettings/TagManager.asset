@@ -7,11 +7,12 @@ TagManager:
   - Bubble
   - Fade Panel
   - Parallax Layer
+  - Bubble Blocker
   layers:
   - Default
   - TransparentFX
   - Ignore Raycast
-  - 
+  - Bubble
   - Water
   - UI
   - 
