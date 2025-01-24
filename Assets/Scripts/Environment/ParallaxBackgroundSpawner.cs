@@ -7,7 +7,7 @@ public class ParallaxBackgroundSpawner : MonoBehaviour
 	[SerializeField] private GameObject prefab; 
 	[SerializeField] private float prefabWidth = 10f; 
 	[SerializeField] private float spawnThreshold = 10f;
-	[SerializeField] private float transformYPosition;
+	[SerializeField] private float transformYPosition = 0;
 
 	private Transform lastBackground;
 

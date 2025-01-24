@@ -15,6 +15,7 @@ public class SoundManager : MonoBehaviour {
 	[SerializeField] private AudioClip[] movementClips;
 	[Space]
 	[SerializeField] private AudioClip buttonClick;
+	[SerializeField] private AudioClip[] bubblePops;
 
 	public int MusicArrayLength { get => music.Length; }
 
@@ -122,6 +123,11 @@ public class SoundManager : MonoBehaviour {
 
 	public void StartAudio(){
 		MusicAudioSource.Play();
+	}
+
+	public AudioClip BubblePop(){
+		int clip = Random.Range(0, bubblePops.Length);
+		return bubblePops[clip];
 	}
 
 	public void SetButtonClip(){

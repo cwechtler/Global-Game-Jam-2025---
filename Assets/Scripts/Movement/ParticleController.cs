@@ -5,14 +5,14 @@ using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
-	[SerializeField] private float BubbleJetHeight = 7f;
+	[SerializeField] private float maxRateOverTime = 30f;
+
     private ParticleSystem myParticleSystem;
 	private ParticleSystem.MainModule main;
 	private ParticleSystem.EmissionModule emission;
 
 	private float inputRightTrigger = 0;
 
-	// Start is called before the first frame update
 	void Start()
     {
 		myParticleSystem = GetComponent<ParticleSystem>();
@@ -20,12 +20,11 @@ public class ParticleController : MonoBehaviour
 		emission = myParticleSystem.emission;
 	}
 
-    // Update is called once per frame
     void Update()
     {
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
-			if (emission.rateOverTime.constant < BubbleJetHeight)
+			if (emission.rateOverTime.constant < maxRateOverTime)
 			{
 				inputRightTrigger += 1f * Time.deltaTime; // Increase value over time
 			}
@@ -38,8 +37,8 @@ public class ParticleController : MonoBehaviour
 		}
 
 		//Debug.Log(inputRightTrigger);
-		//main.startLifetime = inputRightTrigger * BubbleJetHeight;
-		emission.rateOverTime = inputRightTrigger * BubbleJetHeight;
+		//main.startLifetime = inputRightTrigger * maxRateOverTime;
+		emission.rateOverTime = inputRightTrigger * maxRateOverTime;
 
 	}
 }

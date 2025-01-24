@@ -5,18 +5,21 @@ using UnityEngine;
 
 public class Bubble : MonoBehaviour
 {
-	[SerializeField] private float minBoostInterval = 2f;
-	[SerializeField] private float maxBoostInterval = 4f;
-	[SerializeField] private float minBoostSpeed = 5f;
-	[SerializeField] private float maxBoostSpeed = 10f;
-	[SerializeField] private float moveDirectionDeviation = 0.35f;
+	//[SerializeField] private float minBoostInterval = 2f;
+	//[SerializeField] private float maxBoostInterval = 4f;
+	//[SerializeField] private float minBoostSpeed = 5f;
+	//[SerializeField] private float maxBoostSpeed = 10f;
+	//[SerializeField] private float moveDirectionDeviation = 0.35f;
+	[Tooltip("# of collisions allowed befor it pops.")]
 	[SerializeField] private int collisionsAllowed = 6;
-	[SerializeField] private float forceMultiplier = 10f; // Adjust the force applied
-	[SerializeField] private float maxForce = 2f; // Max force to apply
-	[SerializeField] private float maxSpeed = 3f; // Max speed the object can move
+	[Tooltip("Adjust the force applied")]
+	[SerializeField] private float forceMultiplier = 0.8f;
+	[Tooltip("Max force to apply")]
+	[SerializeField] private float maxForce = 1f;
+	[Tooltip("Max speed the object can move")]
+	[SerializeField] private float maxSpeed = 3f;
 
-	//private BubbleFactory factoryParent;
-	private GameObject bubbleAimDirection;	
+	//private GameObject bubbleAimDirection;	
 	private Rigidbody2D myRigidbody2D;
 
 	private AudioSource audioSource;
@@ -33,12 +36,12 @@ public class Bubble : MonoBehaviour
 		animController = animator.runtimeAnimatorController;
 
 		// if new instance, set velocity of 1 toward aim direction y-axis
-		if (myRigidbody2D.velocity.magnitude == 0) {
+		//if (myRigidbody2D.velocity.magnitude == 0) {
 			//myRigidbody2D.velocity = bubbleAimDirection.transform.up;
-		}
+		//}
 
 		//StartCoroutine(RotateBubble(animController.animationClips.First(a => a.name == "Bubble Spawn").length));
-		StartCoroutine(MoveBubble());
+		//StartCoroutine(MoveBubble());
 	}
 
 	//public void InitializeFromFactory(BubbleFactory _factoryParent, GameObject _bubbleAimDirection)
@@ -47,81 +50,66 @@ public class Bubble : MonoBehaviour
 	//	this.bubbleAimDirection = _bubbleAimDirection;
 	//}
 
-	public IEnumerator RotateBubble(float waitTime)
-	{
-		yield return new WaitForSeconds(waitTime);
-		this.transform.rotation = Quaternion.identity;
-	}
+	//public IEnumerator RotateBubble(float waitTime)
+	//{
+	//	yield return new WaitForSeconds(waitTime);
+	//	this.transform.rotation = Quaternion.identity;
+	//}
 
-	private IEnumerator MoveBubble() {
-		for (;;) {
-			if (!isDead) {
-				// boost only if new speed is faster than current speed
-				float newSpeed = (Random.value * (maxBoostSpeed - minBoostSpeed)) + minBoostSpeed;
-				if (newSpeed > myRigidbody2D.velocity.magnitude) {
-					float directionDeviation = (Random.value * moveDirectionDeviation * 2) - moveDirectionDeviation;
-					float newDirection = Mathf.Atan2(myRigidbody2D.velocity.normalized.y, myRigidbody2D.velocity.normalized.x) + directionDeviation;
-					myRigidbody2D.velocity = new Vector2(Mathf.Cos(newDirection) * newSpeed, Mathf.Sin(newDirection) * newSpeed);
-				}
-			}
-			float nextBoostTime = (Random.value * (maxBoostInterval - minBoostInterval)) + minBoostInterval;
-			yield return new WaitForSeconds(nextBoostTime);
-		}
-	}
+	//private IEnumerator MoveBubble() {
+	//	for (;;) {
+	//		if (!isDead) {
+	//			// boost only if new speed is faster than current speed
+	//			float newSpeed = (Random.value * (maxBoostSpeed - minBoostSpeed)) + minBoostSpeed;
+	//			if (newSpeed > myRigidbody2D.velocity.magnitude) {
+	//				float directionDeviation = (Random.value * moveDirectionDeviation * 2) - moveDirectionDeviation;
+	//				float newDirection = Mathf.Atan2(myRigidbody2D.velocity.normalized.y, myRigidbody2D.velocity.normalized.x) + directionDeviation;
+	//				myRigidbody2D.velocity = new Vector2(Mathf.Cos(newDirection) * newSpeed, Mathf.Sin(newDirection) * newSpeed);
+	//			}
+	//		}
+	//		float nextBoostTime = (Random.value * (maxBoostInterval - minBoostInterval)) + minBoostInterval;
+	//		yield return new WaitForSeconds(nextBoostTime);
+	//	}
+	//}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
-		collisionsAllowed --;
-		if (collisionsAllowed == 0) {
-			//animator.SetTrigger("Bubble Pop");
-			myRigidbody2D.velocity = Vector2.zero;
+		if (!collision.gameObject.CompareTag("Bubble"))
+		{
+			collisionsAllowed--;
+			if (collisionsAllowed == 0)
+			{
+				//animator.SetTrigger("Bubble Pop");
+				myRigidbody2D.velocity = Vector2.zero;
 
-			CircleCollider2D circleCollider2D = GetComponent<CircleCollider2D>();
-			circleCollider2D.enabled = false;
-			
-			//audioSource.PlayOneShot(SoundManager.instance.BubblePop());
+				CircleCollider2D circleCollider2D = GetComponent<CircleCollider2D>();
+				circleCollider2D.enabled = false;
 
-			//if (!isDead && factoryParent != null) {
-			//	factoryParent.spawnedBubbles--;	
-			//}
+				AudioClip clip = SoundManager.instance.BubblePop();
+				audioSource.PlayOneShot(clip);
 
-			isDead = true;
-			Destroy(gameObject, animController.animationClips.First(a => a.name == "Bubble Pop").length);
+				isDead = true;
+				//Destroy(gameObject, animController.animationClips.First(a => a.name == "Bubble Pop").length);
+				Destroy(gameObject, clip.length);
+			}
 		}
 	}
-	private void OnParticleCollision(GameObject other)
-	{
-		//Debug.Log("Particle hit: " + other.name);
 
-		if (myRigidbody2D != null)
-		{
-			//Debug.Log("Has Rigidbody2D");
-
+	private void OnParticleCollision(GameObject other){
+		if (myRigidbody2D != null){
 			ParticleSystem ps = other.GetComponent<ParticleSystem>();
-			if (ps != null)
-			{
-				//Debug.Log("Has Particle System");
-
+			if (ps != null){
 				List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
 				int numCollisionEvents = ps.GetCollisionEvents(gameObject, collisionEvents);
 
-				for (int i = 0; i < numCollisionEvents; i++)
-				{
+				for (int i = 0; i < numCollisionEvents; i++){
 					Vector2 hitVelocity = collisionEvents[i].velocity; // Get particle velocity
 					Vector2 forceToApply = Vector2.ClampMagnitude(hitVelocity * forceMultiplier, maxForce);
 
 					myRigidbody2D.AddForce(forceToApply, ForceMode2D.Impulse);
-					//Debug.Log("Applied force: " + forceToApply);
-
-					//Vector2 hitVelocity = collisionEvents[i].velocity; // Particle velocity
-					//myRigidbody2D.AddForce(Vector2.ClampMagnitude(hitVelocity * forceMultiplier, 5f), ForceMode2D.Impulse);
-					//Debug.Log("Applied force: " + hitVelocity);
-
-					// Limit max speed
 				}
 
-				if (myRigidbody2D.velocity.magnitude > maxSpeed)
-				{
+				if (myRigidbody2D.velocity.magnitude > maxSpeed){
 					myRigidbody2D.velocity = myRigidbody2D.velocity.normalized * maxSpeed;
 				}
 			}

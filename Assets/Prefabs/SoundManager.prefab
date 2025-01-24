@@ -43,7 +43,7 @@ AudioSource:
   m_GameObject: {fileID: 5739616327053476966}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 9079760658400217882, guid: d8648b42f809a6048ac85b0947055905, type: 2}
+  OutputAudioMixerGroup: {fileID: 9079760658400217882, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 0.084
@@ -139,7 +139,7 @@ AudioSource:
   m_GameObject: {fileID: 5739616327053476966}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 4397330918889810853, guid: d8648b42f809a6048ac85b0947055905, type: 2}
+  OutputAudioMixerGroup: {fileID: 4397330918889810853, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -235,7 +235,7 @@ AudioSource:
   m_GameObject: {fileID: 5739616327053476966}
   m_Enabled: 1
   serializedVersion: 4
-  OutputAudioMixerGroup: {fileID: 9170229119258061272, guid: d8648b42f809a6048ac85b0947055905, type: 2}
+  OutputAudioMixerGroup: {fileID: 9170229119258061272, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
   m_Volume: 1
@@ -335,19 +335,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   fadeInTime: 0.05
-  audioMixer: {fileID: 0}
-  MusicAudioSource: {fileID: 0}
-  SFXAudioSource: {fileID: 0}
-  ambientAudioSource: {fileID: 0}
+  audioMixer: {fileID: 24100000, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
+  MusicAudioSource: {fileID: 5739616327053476989}
+  SFXAudioSource: {fileID: 5739616327053476986}
+  ambientAudioSource: {fileID: 5739616327053476987}
   music: []
   ambientClips: []
   movementClips: []
-  roosterClip: {fileID: 0}
-  chickDepositSound: {fileID: 0}
-  chickCaughtClip: {fileID: 0}
   buttonClick: {fileID: 0}
-  gotchaClip: {fileID: 0}
-  grumbleClip: {fileID: 0}
-  owClip: {fileID: 0}
-  smackClip: {fileID: 0}
-  slipClip: {fileID: 0}
+  bubblePops:
+  - {fileID: 8300000, guid: 85bb789287c8c2a4f8af9ca53b3a98b6, type: 3}
+  - {fileID: 8300000, guid: 5c9a4eeb6f6d978469f93a8c5f48198b, type: 3}
+  - {fileID: 8300000, guid: d711ae8d0c10fdc47b675c8e77890a0a, type: 3}
+  - {fileID: 8300000, guid: 76d8056f570dfc54d9ba52e292a6d163, type: 3}
+  - {fileID: 8300000, guid: 2e91a6e6560863d41af241dde3c5324b, type: 3}

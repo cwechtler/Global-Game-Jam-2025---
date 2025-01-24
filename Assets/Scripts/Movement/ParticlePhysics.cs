@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class ParticlePhysics : MonoBehaviour
 {
-    public ParticleSystem particleSystem;
+    public ParticleSystem myParticleSystem;
 //    public Rigidbody targetRigidbody; // The Rigidbody to interact with
 
     public Transform particleSystemTransform;
@@ -14,12 +14,12 @@ public class ParticlePhysics : MonoBehaviour
 
     void Start()
     {
-        particles = new ParticleSystem.Particle[particleSystem.main.maxParticles];
+        particles = new ParticleSystem.Particle[myParticleSystem.main.maxParticles];
         //rotationOverLifetime = particleSystem.rotationOverLifetime;
         //rotationOverLifetime.enabled = true;
 
         // Set Particle System simulation space to Local
-        var mainModule = particleSystem.main;
+        var mainModule = myParticleSystem.main;
         mainModule.simulationSpace = ParticleSystemSimulationSpace.Local;
     }
 
