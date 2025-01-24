@@ -11,6 +11,9 @@ public class Bubble : MonoBehaviour
 	[SerializeField] private float maxBoostSpeed = 10f;
 	[SerializeField] private float moveDirectionDeviation = 0.35f;
 	[SerializeField] private int collisionsAllowed = 6;
+	[SerializeField] private float forceMultiplier = 10f; // Adjust the force applied
+	[SerializeField] private float maxForce = 2f; // Max force to apply
+	[SerializeField] private float maxSpeed = 3f; // Max speed the object can move
 
 	//private BubbleFactory factoryParent;
 	private GameObject bubbleAimDirection;	
@@ -84,6 +87,44 @@ public class Bubble : MonoBehaviour
 
 			isDead = true;
 			Destroy(gameObject, animController.animationClips.First(a => a.name == "Bubble Pop").length);
+		}
+	}
+	private void OnParticleCollision(GameObject other)
+	{
+		//Debug.Log("Particle hit: " + other.name);
+
+		if (myRigidbody2D != null)
+		{
+			//Debug.Log("Has Rigidbody2D");
+
+			ParticleSystem ps = other.GetComponent<ParticleSystem>();
+			if (ps != null)
+			{
+				//Debug.Log("Has Particle System");
+
+				List<ParticleCollisionEvent> collisionEvents = new List<ParticleCollisionEvent>();
+				int numCollisionEvents = ps.GetCollisionEvents(gameObject, collisionEvents);
+
+				for (int i = 0; i < numCollisionEvents; i++)
+				{
+					Vector2 hitVelocity = collisionEvents[i].velocity; // Get particle velocity
+					Vector2 forceToApply = Vector2.ClampMagnitude(hitVelocity * forceMultiplier, maxForce);
+
+					myRigidbody2D.AddForce(forceToApply, ForceMode2D.Impulse);
+					//Debug.Log("Applied force: " + forceToApply);
+
+					//Vector2 hitVelocity = collisionEvents[i].velocity; // Particle velocity
+					//myRigidbody2D.AddForce(Vector2.ClampMagnitude(hitVelocity * forceMultiplier, 5f), ForceMode2D.Impulse);
+					//Debug.Log("Applied force: " + hitVelocity);
+
+					// Limit max speed
+				}
+
+				if (myRigidbody2D.velocity.magnitude > maxSpeed)
+				{
+					myRigidbody2D.velocity = myRigidbody2D.velocity.normalized * maxSpeed;
+				}
+			}
 		}
 	}
 }
