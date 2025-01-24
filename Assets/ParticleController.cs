@@ -23,18 +23,20 @@ public class ParticleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		//inputRightTrigger = Input.GetAxis("Trigger");
 		if (Input.GetKey(KeyCode.UpArrow))
 		{
 			if (emission.rateOverTime.constant < BubbleJetHeight)
 			{
 				inputRightTrigger += 1f * Time.deltaTime; // Increase value over time
 			}
-			//inputRightTrigger = 1;
+		}
+		else {
+			inputRightTrigger = Input.GetAxis("Trigger");
 		}
 		if (Input.GetKeyUp(KeyCode.UpArrow)){
 			inputRightTrigger = 0;
 		}
+
 		//Debug.Log(inputRightTrigger);
 		//main.startLifetime = inputRightTrigger * BubbleJetHeight;
 		emission.rateOverTime = inputRightTrigger * BubbleJetHeight;
