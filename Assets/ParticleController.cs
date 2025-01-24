@@ -1,3 +1,4 @@
+using Newtonsoft.Json.Linq;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,6 +9,8 @@ public class ParticleController : MonoBehaviour
     private ParticleSystem myParticleSystem;
 	private ParticleSystem.MainModule main;
 	private ParticleSystem.EmissionModule emission;
+
+	private float inputRightTrigger = 0;
 
 	// Start is called before the first frame update
 	void Start()
@@ -20,8 +23,19 @@ public class ParticleController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-		float inputRightTrigger = Input.GetAxis("Trigger");
-		Debug.Log(inputRightTrigger);
+		//inputRightTrigger = Input.GetAxis("Trigger");
+		if (Input.GetKey(KeyCode.UpArrow))
+		{
+			if (emission.rateOverTime.constant < BubbleJetHeight)
+			{
+				inputRightTrigger += 1f * Time.deltaTime; // Increase value over time
+			}
+			//inputRightTrigger = 1;
+		}
+		if (Input.GetKeyUp(KeyCode.UpArrow)){
+			inputRightTrigger = 0;
+		}
+		//Debug.Log(inputRightTrigger);
 		//main.startLifetime = inputRightTrigger * BubbleJetHeight;
 		emission.rateOverTime = inputRightTrigger * BubbleJetHeight;
 
