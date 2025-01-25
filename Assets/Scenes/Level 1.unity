@@ -900,13 +900,21 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5627357694415925408, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
+      propertyPath: maxForce
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 5627357694415925408, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
+      propertyPath: forceMultiplier
+      value: 0.5
+      objectReference: {fileID: 0}
     - target: {fileID: 8839901508744085154, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
       propertyPath: m_Name
       value: Bubble
       objectReference: {fileID: 0}
     - target: {fileID: 8839901508744085154, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
@@ -1494,6 +1502,58 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 519420032}
     m_Modifications:
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ForceModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: NoiseModule.damping
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: NoiseModule.enabled
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ForceModule.y.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ForceModule.inWorldSpace
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ClampVelocityModule.dampen
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ClampVelocityModule.x.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ClampVelocityModule.y.scalar
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ClampVelocityModule.drag.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ClampVelocityModule.separateAxis
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ClampVelocityModule.magnitude.scalar
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: ColorModule.gradient.maxGradient.key1.a
+      value: 0.39607844
+      objectReference: {fileID: 0}
+    - target: {fileID: 1992952180984647946, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
+      propertyPath: CollisionModule.m_EnergyLossOnCollision.scalar
+      value: 0.4
+      objectReference: {fileID: 0}
     - target: {fileID: 1992952181471806418, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
       propertyPath: tail
       value: 
