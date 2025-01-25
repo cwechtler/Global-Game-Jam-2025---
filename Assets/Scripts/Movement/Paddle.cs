@@ -64,7 +64,9 @@ public class Paddle : MonoBehaviour {
 
 	void Rotate(bool invert = false) {
 		float inputZ = Input.GetAxis(invert ? "Horizontal" : "Horizontal2");
+		// Remap inputZ (-1 to 1) to (-60 to 0)
+		float mappedRotation = Mathf.Lerp(-60f, 0f, (inputZ + 1) / 2f);
 		nozzle.localEulerAngles = new Vector3(0, 0, inputZ * rotationDegrees);
-		tail.localEulerAngles = new Vector3(0, 0, inputZ * rotationDegrees);
+		tail.localEulerAngles = new Vector3(0, 0, mappedRotation);
 	}
 }
