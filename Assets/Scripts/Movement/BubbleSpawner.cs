@@ -11,10 +11,10 @@ public class BubbleSpawner : MonoBehaviour
 	private float transformXPosition = 0f;
 	private Transform lastBubble;
 
-	public List<Transform> transforms = new List<Transform>();
+	private List<Transform> transforms = new List<Transform>();
 	private int transformCount = 0;
 
-	[SerializeField] private float spawnCounter; // Increase value over time
+	private float spawnCounter; // Increase value over time
 
 	void Start()
     {
@@ -38,7 +38,7 @@ public class BubbleSpawner : MonoBehaviour
 		}
 
 		spawnCounter += 1f * Time.deltaTime;
-		//Debug.Log(spawnCounter);
+
 		if (spawnCounter > spawnTime && transforms.Count < maxTotalBubbles) { 
 			spawnCounter = 0f;
 			transformXPosition = Random.Range(-8f, 8f);
@@ -47,13 +47,6 @@ public class BubbleSpawner : MonoBehaviour
 			transforms.Add(lastBubble);
 			transformCount++;
 		}
-
-		//if (!lastBubble)
-		//{
-		//	transformXPosition = Random.Range(-8f, 8f);
-		//	lastBubble = Instantiate(bubblePrefab, new Vector3(transformXPosition, 6, 1), Quaternion.identity).transform;
-		//	lastBubble.transform.parent = this.transform;
-		//}
 
 		if (transforms.Count < transformCount){
 			transformXPosition = Random.Range(-8f, 8f);

@@ -7,6 +7,7 @@ public class PlayerPrefsManager : MonoBehaviour {
 	const string MUSIC_VOLUME_KEY = "music_volume";
 	const string SFX_VOLUME_KEY = "sfx_volume";
 
+	const string MOUSE_CONTROLS_KEY = "mouse_controls";
 	const string PLAYER_NAME_KEY = "player_name";
 	const string HIGH_SCORES_KEY = "high_scores";
 
@@ -78,6 +79,22 @@ public class PlayerPrefsManager : MonoBehaviour {
 	public static string GetHighScores()
 	{
 		return PlayerPrefs.GetString(HIGH_SCORES_KEY);
+	}
+
+	public static void SetMouseControls(bool isMouse)
+	{
+		int tinyInt = isMouse ? 1 : 0;
+		PlayerPrefs.SetInt(MOUSE_CONTROLS_KEY, tinyInt);
+	}
+	public static bool GetMouseControls()
+	{
+		if (PlayerPrefs.GetInt(MOUSE_CONTROLS_KEY) == 1)
+		{
+			return true;
+		}
+		else {
+			return false;
+		}	
 	}
 
 	public static void DeleteAllPlayerPrefs() {

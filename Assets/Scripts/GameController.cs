@@ -13,7 +13,8 @@ public class GameController : MonoBehaviour
 	public float timeDeltaTime { get; private set; }
 	public int Score { get; set; } = 0;
 
-	public bool MouseControl { get; set; } = false;
+	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
+	private bool mouseControl = false;
 
 	private GameObject fadePanel;
 
@@ -25,6 +26,9 @@ public class GameController : MonoBehaviour
 		else {
 			instance = this;
 			DontDestroyOnLoad(gameObject);
+		}
+		if (PlayerPrefs.HasKey("mouse_controls")) {
+			mouseControl = PlayerPrefsManager.GetMouseControls();
 		}
 		//PlayerPrefsManager.DeleteAllPlayerPrefs();
 	}
