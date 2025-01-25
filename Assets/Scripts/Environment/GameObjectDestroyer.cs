@@ -7,9 +7,10 @@ public class GameObjectDestroyer : MonoBehaviour
 {
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.CompareTag("Parallax Layer"))
+		Debug.Log(collision.gameObject.name);
+		if (!collision.CompareTag("Destroyer"))
 		{
-            Destroy(collision.gameObject);
+			Destroy(collision.gameObject);
 		}
 	}
 }
