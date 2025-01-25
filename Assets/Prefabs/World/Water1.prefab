@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 8313629731860567473}
   - component: {fileID: 7507244980557332288}
   - component: {fileID: 8013759116134635135}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Water1
-  m_TagString: Untagged
+  m_TagString: Parallax Layer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
