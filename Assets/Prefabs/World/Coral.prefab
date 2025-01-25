@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 2783535880733456702}
   - component: {fileID: 8462820073749783625}
   - component: {fileID: 5418054500343851405}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Coral
-  m_TagString: Untagged
+  m_TagString: Parallax Layer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -107,5 +107,5 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 20.25, y: 0.0001}
+  m_Size: {x: 20.25, y: 3.32}
   m_EdgeRadius: 0

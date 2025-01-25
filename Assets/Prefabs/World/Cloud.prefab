@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 1548709549524041229}
   - component: {fileID: 4480023763623688061}
   - component: {fileID: 2160505474376740652}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cloud
-  m_TagString: Untagged
+  m_TagString: Parallax Layer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

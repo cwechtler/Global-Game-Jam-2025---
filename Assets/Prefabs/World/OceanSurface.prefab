@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 4639283605676017384}
   - component: {fileID: 1039066544072288085}
   - component: {fileID: 1227011339584149249}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: OceanSurface
-  m_TagString: Untagged
+  m_TagString: Parallax Layer
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
