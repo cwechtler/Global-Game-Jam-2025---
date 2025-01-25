@@ -49,6 +49,7 @@ public class CollectableSpawner : MonoBehaviour
 			{
 				if (Vector3.Distance(spawnPosition, existing.position) < minDistance)
 				{
+					//print("Too close" + Vector3.Distance(spawnPosition, existing.position));
 					tooClose = true;
 					break;
 				}
@@ -56,6 +57,7 @@ public class CollectableSpawner : MonoBehaviour
 
 			if (!tooClose)
 			{
+				//print("Spawn");
 				lastItem = Instantiate(Prefab, spawnPosition, Quaternion.identity).transform;
 				lastItem.transform.parent = this.transform;
 				transforms.Add(lastItem);

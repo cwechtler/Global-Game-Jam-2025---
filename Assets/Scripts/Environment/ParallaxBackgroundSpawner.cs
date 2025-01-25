@@ -7,6 +7,8 @@ public class ParallaxBackgroundSpawner : MonoBehaviour
 	[SerializeField] private GameObject prefab; 
 	[SerializeField] private float prefabWidth = 10f; 
 	[SerializeField] private float spawnThreshold = 10f;
+	[Space]
+	[SerializeField] private float initialXPosition = 0;
 	[SerializeField] private float transformYPosition = 0;
 
 	private Transform lastBackground;
@@ -14,7 +16,7 @@ public class ParallaxBackgroundSpawner : MonoBehaviour
 	void Start()
 	{
 		// Initialize the first background piece
-		lastBackground = Instantiate(prefab, new Vector3(0, transformYPosition, 1), Quaternion.identity).transform;
+		lastBackground = Instantiate(prefab, new Vector3(initialXPosition, transformYPosition, 1), Quaternion.identity).transform;
 		lastBackground.transform.parent = this.transform;
 	}
 

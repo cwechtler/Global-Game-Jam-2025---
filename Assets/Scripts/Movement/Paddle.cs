@@ -5,6 +5,7 @@ public class Paddle : MonoBehaviour {
 	[SerializeField] private float paddlespeed = 10f;
 	[SerializeField] private int rotationDegrees = 30;
 	[SerializeField] private Transform nozzle;
+	[SerializeField] private Transform tail;
 	[Space]
 	[Header("Mouse Binding")]
 	[SerializeField] private float screenLeftLimit = -8f;
@@ -64,5 +65,6 @@ public class Paddle : MonoBehaviour {
 	void Rotate(bool invert = false) {
 		float inputZ = Input.GetAxis(invert ? "Horizontal" : "Horizontal2");
 		nozzle.localEulerAngles = new Vector3(0, 0, inputZ * rotationDegrees);
+		tail.localEulerAngles = new Vector3(0, 0, inputZ * rotationDegrees);
 	}
 }
