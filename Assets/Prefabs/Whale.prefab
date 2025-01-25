@@ -4971,6 +4971,7 @@ MonoBehaviour:
   paddlespeed: 10
   rotationDegrees: 30
   nozzle: {fileID: 1992952180984647948}
+  tail: {fileID: 1992952181659090535}
   screenLeftLimit: -6
   screenRightLimit: 6
 --- !u!1 &1992952181659090536
