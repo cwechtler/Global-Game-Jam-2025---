@@ -1042,51 +1042,8 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 5739616327053476985, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-      propertyPath: audioMixer
-      value: 
-      objectReference: {fileID: 24100000, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
-    - target: {fileID: 5739616327053476985, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-      propertyPath: SFXAudioSource
-      value: 
-      objectReference: {fileID: 756835744}
-    - target: {fileID: 5739616327053476985, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-      propertyPath: MusicAudioSource
-      value: 
-      objectReference: {fileID: 756835745}
-    - target: {fileID: 5739616327053476985, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-      propertyPath: ambientAudioSource
-      value: 
-      objectReference: {fileID: 756835743}
-    - target: {fileID: 5739616327053476986, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 4397330918889810853, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
-    - target: {fileID: 5739616327053476987, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 9170229119258061272, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
-    - target: {fileID: 5739616327053476989, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-      propertyPath: OutputAudioMixerGroup
-      value: 
-      objectReference: {fileID: 9079760658400217882, guid: ae8ee47f53b2f344d804db781f09a221, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
---- !u!82 &756835743 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5739616327053476987, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-  m_PrefabInstance: {fileID: 756835742}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &756835744 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5739616327053476986, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-  m_PrefabInstance: {fileID: 756835742}
-  m_PrefabAsset: {fileID: 0}
---- !u!82 &756835745 stripped
-AudioSource:
-  m_CorrespondingSourceObject: {fileID: 5739616327053476989, guid: 8f2b82cec34412b45b666c2ec79041aa, type: 3}
-  m_PrefabInstance: {fileID: 756835742}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &876385445
 GameObject:
   m_ObjectHideFlags: 0

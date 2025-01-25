@@ -1,6 +1,5 @@
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class Bubble : MonoBehaviour
@@ -16,9 +15,6 @@ public class Bubble : MonoBehaviour
 
 	private Rigidbody2D myRigidbody2D;
 	private AudioSource audioSource;
-
-
-	private bool isDead = false;
 
 	void Start()
 	{
@@ -41,7 +37,6 @@ public class Bubble : MonoBehaviour
 				AudioClip clip = SoundManager.instance.BubblePop();
 				audioSource.PlayOneShot(clip);
 
-				isDead = true;
 				Destroy(gameObject, clip.length);
 			}
 		}
