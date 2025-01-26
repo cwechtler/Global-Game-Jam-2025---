@@ -144,7 +144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 1
-  doublePointsColor: {r: 1, g: 0, b: 0.68235296, a: 1}
+  doublePointsColor: {r: 0, g: 1, b: 0.68235296, a: 1}
   spriteRenderer: {fileID: 6718078963042529477}
   ColorList: []
 --- !u!95 &5413358797999500126
