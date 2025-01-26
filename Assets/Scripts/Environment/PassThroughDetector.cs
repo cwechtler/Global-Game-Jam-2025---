@@ -23,8 +23,8 @@ public class PassThroughDetector : MonoBehaviour
 			}
 			else
 			{
-				childSpriteRenderer.color = Color.white;
-			}
+                childSpriteRenderer.color = new Color(0.922f, 0.765f, 0.612f, 1f);
+            }
 		}		
 	}
 
