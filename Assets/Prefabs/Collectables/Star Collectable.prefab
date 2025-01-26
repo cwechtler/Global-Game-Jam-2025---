@@ -144,6 +144,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 1
+  doublePointsColor: {r: 1, g: 0, b: 0.9843137, a: 1}
+  spriteRenderer: {fileID: 0}
+  ColorList: []
 --- !u!95 &5413358797999500126
 Animator:
   serializedVersion: 3

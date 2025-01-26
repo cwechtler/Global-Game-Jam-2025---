@@ -33,11 +33,7 @@ public class PassThroughDetector : MonoBehaviour
 			{
 				allChildSpriteRenderers[i].color = ColorList[i]; //new Color(0.922f, 0.765f, 0.612f, 1f);
 			}
-		}
-		foreach (SpriteRenderer childSpriteRenderer in allChildSpriteRenderers)
-		{
-
-		}		
+		}	
 	}
 
 	private void OnTriggerEnter2D(Collider2D other)
