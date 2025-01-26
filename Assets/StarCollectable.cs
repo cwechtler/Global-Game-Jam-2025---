@@ -6,8 +6,9 @@ public class StarCollectable : MonoBehaviour
 {
 	[SerializeField] private int scoreAmount = 1;
 	[SerializeField] private Color doublePointsColor;
-	public SpriteRenderer spriteRenderer;
-	public List<Color> ColorList = new List<Color>();
+
+	private SpriteRenderer spriteRenderer;
+	private List<Color> ColorList = new List<Color>();
 
 	private void Start()
 	{
@@ -17,17 +18,14 @@ public class StarCollectable : MonoBehaviour
 
 	private void Update()
 	{
-		//for (int i = 0; i < spriteRenderer.Length; i++)
-		//{
-			if (GameController.instance.IsDoublePoints)
-			{
-				spriteRenderer.color = doublePointsColor; //new Color(1f, 0.478f, 0f, 1f); //#FF7A00
-			}
-			else
-			{
-				spriteRenderer.color = ColorList[0]; //new Color(0.922f, 0.765f, 0.612f, 1f);
-			}
-		//}
+		if (GameController.instance.IsDoublePoints)
+		{
+			spriteRenderer.color = doublePointsColor;
+		}
+		else
+		{
+			spriteRenderer.color = ColorList[0];
+		}
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)

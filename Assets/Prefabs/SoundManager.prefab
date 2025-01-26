@@ -340,10 +340,11 @@ MonoBehaviour:
   SFXAudioSource: {fileID: 5739616327053476986}
   ambientAudioSource: {fileID: 5739616327053476987}
   music:
+  - {fileID: 8300000, guid: db00f8a4d36d04e4f995e36df2210917, type: 3}
   - {fileID: 8300000, guid: f77126742c7cf104b96e3148f4bc2e30, type: 3}
   ambientClips: []
   movementClips: []
-  buttonClick: {fileID: 0}
+  buttonClick: {fileID: 8300000, guid: 5c9a4eeb6f6d978469f93a8c5f48198b, type: 3}
   bubblePops:
   - {fileID: 8300000, guid: 85bb789287c8c2a4f8af9ca53b3a98b6, type: 3}
   - {fileID: 8300000, guid: 5c9a4eeb6f6d978469f93a8c5f48198b, type: 3}

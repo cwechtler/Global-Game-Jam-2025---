@@ -33,15 +33,15 @@ public class ParticleController : MonoBehaviour
 			{
 				inputRightTrigger += 1f * Time.deltaTime; // Increase value over time
 			}
-            
-			// Play the spray sound if the particles are emitting
-            if (!audioSource.isPlaying)
-            {
-                audioSource.PlayOneShot(spraySound); // Play the sound when the emission starts
-            }
+
+			PlaySprayAudio();
         }
 		else {
 			inputRightTrigger = Input.GetAxis("Trigger");
+
+			if (inputRightTrigger > 0) {
+				PlaySprayAudio();
+			}
 		}
 		if (!GameController.instance.MouseControl ? Input.GetKeyUp(KeyCode.UpArrow) : Input.GetMouseButtonUp(0))
 		{
@@ -52,5 +52,13 @@ public class ParticleController : MonoBehaviour
 		//main.startLifetime = inputRightTrigger * maxRateOverTime;
 		emission.rateOverTime = inputRightTrigger * maxRateOverTime;
 
+	}
+
+	private void PlaySprayAudio() {
+		// Play the spray sound if the particles are emitting
+		if (!audioSource.isPlaying)
+		{
+			audioSource.PlayOneShot(spraySound); // Play the sound when the emission starts
+		}
 	}
 }

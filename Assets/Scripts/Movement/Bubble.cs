@@ -12,7 +12,9 @@ public class Bubble : MonoBehaviour
 	[SerializeField] private float maxForce = 1f;
 	[Tooltip("Max speed the object can move")]
 	[SerializeField] private float maxSpeed = 3f;
-	[SerializeField] private bool isValid = true;
+
+	[HideInInspector]
+	public bool isValid = true;
 
 	private Rigidbody2D myRigidbody2D;
 	private AudioSource audioSource;
@@ -22,7 +24,6 @@ public class Bubble : MonoBehaviour
 	{
 		myRigidbody2D = GetComponent<Rigidbody2D>();
 		audioSource = GetComponent<AudioSource>();
-
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)

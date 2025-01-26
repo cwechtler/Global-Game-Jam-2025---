@@ -117,10 +117,10 @@ public class LevelManager : MonoBehaviour {
 				clipIndex = 0;
 				break;
 			case Level1String:
-				clipIndex = 0;// randomIndex;
+				clipIndex = 1;// randomIndex;
 				break;
 			case "Level 2":
-				clipIndex = 0;// randomIndex;
+				clipIndex = 1;// randomIndex;
 				break;
 			default:
 				clipIndex = 0;

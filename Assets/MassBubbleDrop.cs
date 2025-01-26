@@ -37,7 +37,6 @@ public class MassBubbleDrop : MonoBehaviour
 		{
 
 			for (int i = 0; i < maxTotalBubbles; i++) {
-				Debug.Log("Spawning");
 				SpawnBubble();
 			}
 			Destroy(gameObject);
@@ -50,9 +49,9 @@ public class MassBubbleDrop : MonoBehaviour
 		spawnPosition = GetValidSpawnPosition();
 		if (spawnPosition != Vector3.zero)
 		{
-			Debug.Log("Spawn");
 			lastBubble = Instantiate(bubblePrefab, new Vector3(transformXPosition, 6, 1), Quaternion.identity).transform;
 			lastBubble.transform.parent = bubbleParent.transform;
+			lastBubble.GetComponent<Bubble>().isValid = false;
 			transforms.Add(lastBubble);
 		}
 		else

@@ -6,11 +6,12 @@ public class PassThroughDetector : MonoBehaviour
 {
 	[SerializeField] private int scoreAmount = 2;
 	[SerializeField] private Color doublePointsColor;
-	public SpriteRenderer[] allChildSpriteRenderers;
+
+	private SpriteRenderer[] allChildSpriteRenderers;
 	private bool enteredLeft = false;
 	private bool enteredRight = false;
 
-	public List<Color> ColorList = new List<Color>();
+	private List<Color> ColorList = new List<Color>();
 
 	private void Start()
 	{

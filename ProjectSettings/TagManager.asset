@@ -11,6 +11,7 @@ TagManager:
   - Collectable
   - Destroyer
   - Extra Whale
+  - Bubble Spawner
   layers:
   - Default
   - TransparentFX

@@ -8,6 +8,7 @@ public class CanvasController : MonoBehaviour
 	[SerializeField] private GameObject pausePanel;
 	[Space]
 	[SerializeField] private TextMeshProUGUI ScoreText;
+	[SerializeField] private TextMeshProUGUI bubbleCountText;
 	[SerializeField] private TextMeshProUGUI doubleScoreText;
 	[SerializeField] private TextMeshProUGUI extraWhaleTimerText;
 	[SerializeField] private Toggle mouseControl;
@@ -25,6 +26,7 @@ public class CanvasController : MonoBehaviour
 		ScoreText.text = GameController.instance.Score.ToString();
 		doubleScoreText.text = GameController.instance.doublePointsCounter.ToString("0.00");
 		extraWhaleTimerText.text = GameController.instance.extraWhaleCounter.ToString("0.00");
+		bubbleCountText.text = GameController.instance.totalBubbles.ToString();
 
 		//if (GameController.instance.isPaused) {
 		//	pausePanel.SetActive(true);
