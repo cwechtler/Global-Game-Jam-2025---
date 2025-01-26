@@ -10,8 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 7476273294675045804}
   - component: {fileID: 6718078963042529477}
-  - component: {fileID: 6873518450346369685}
+  - component: {fileID: 4740091510931673977}
   - component: {fileID: 8289420136999539598}
+  - component: {fileID: 5413358797999500126}
   m_Layer: 7
   m_Name: Star Collectable
   m_TagString: Bubble
@@ -73,7 +74,7 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Sprite: {fileID: 21300000, guid: 3ef518d7a09fa374a88c5506e20689f9, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 5ff97fd819fdebe4da4f52b29534286c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -84,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!60 &6873518450346369685
+--- !u!60 &4740091510931673977
 PolygonCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -109,28 +110,27 @@ PolygonCollider2D:
   m_AutoTiling: 0
   m_Points:
     m_Paths:
-    - - {x: 0.32, y: -0.355}
-      - {x: 0.29, y: -0.21499999}
-      - {x: 0.24, y: -0.114999995}
-      - {x: 0.45, y: 0.105}
-      - {x: 0.45, y: 0.175}
-      - {x: 0.39, y: 0.205}
-      - {x: 0.17, y: 0.235}
-      - {x: 0.16, y: 0.295}
-      - {x: 0.07, y: 0.465}
-      - {x: 0.03, y: 0.475}
-      - {x: -0.03, y: 0.475}
-      - {x: -0.17999999, y: 0.255}
-      - {x: -0.42999998, y: 0.175}
-      - {x: -0.42999998, y: 0.114999995}
-      - {x: -0.42, y: 0.085}
-      - {x: -0.22999999, y: -0.105}
-      - {x: -0.32, y: -0.305}
-      - {x: -0.28, y: -0.385}
-      - {x: -0.17999999, y: -0.385}
-      - {x: 0.01, y: -0.265}
-      - {x: 0.22, y: -0.385}
-      - {x: 0.22999999, y: -0.385}
+    - - {x: 0.29999998, y: -0.375}
+      - {x: 0.21, y: -0.125}
+      - {x: 0.40217486, y: 0.04074754}
+      - {x: 0.45999998, y: 0.095}
+      - {x: 0.45999998, y: 0.145}
+      - {x: 0.33029124, y: 0.15519421}
+      - {x: 0.14029138, y: 0.17698054}
+      - {x: 0.01, y: 0.45499998}
+      - {x: -0.049999997, y: 0.45499998}
+      - {x: -0.07, y: 0.445}
+      - {x: -0.22, y: 0.16499999}
+      - {x: -0.2769127, y: 0.16133016}
+      - {x: -0.48, y: 0.145}
+      - {x: -0.4720777, y: 0.07857278}
+      - {x: -0.24905837, y: -0.1290158}
+      - {x: -0.35999998, y: -0.42499998}
+      - {x: -0.34, y: -0.435}
+      - {x: -0.24, y: -0.435}
+      - {x: -0.02, y: -0.305}
+      - {x: 0.19999999, y: -0.435}
+      - {x: 0.28, y: -0.435}
 --- !u!114 &8289420136999539598
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -144,3 +144,22 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 1
+--- !u!95 &5413358797999500126
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7476273294675045807}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7430df88f98d5074a90baf23c647486c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
