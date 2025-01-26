@@ -4,11 +4,22 @@ using UnityEngine;
 
 public class CollectableSpawner : MonoBehaviour
 {
+<<<<<<< Updated upstream
 	[SerializeField] private GameObject Prefab;
 	[Tooltip("Amount of time between spawns")]
 	[SerializeField] private int spawnTime = 10;
 	[Tooltip("Minimum allowed distance")]
 	[SerializeField] private float minDistance = 2.0f;
+=======
+	[SerializeField] private Collectable[] collectables;
+	[Space]
+	[Tooltip("Farthest up from the center the prefabs can randomly spawn.")]
+	[Range(-3f, 0f)]
+	[SerializeField] private float spawnerMaxRange = -3f;
+	[Tooltip("Farthest bottom from the center the prefabs can randomly spawn.")]
+	[Range(0f, 4f)]
+	[SerializeField] private float spawnerMinRange = 4f;
+>>>>>>> Stashed changes
 
 	private Transform lastItem;
 	public List<Transform> transforms = new List<Transform>();
@@ -68,6 +79,25 @@ public class CollectableSpawner : MonoBehaviour
 		}
 		while (attempts > 0);
 
+<<<<<<< Updated upstream
 		Debug.LogWarning("Couldn't find a valid spawn position.");
+=======
+	private Vector3 GetValidSpawnPosition(Collectable collectable)
+	{
+		// Set the potential position with fixed X and Z and a random Y coordinates.
+		Vector3 potentialPosition = new Vector3(11, Random.Range(spawnerMaxRange, spawnerMinRange), 1);
+
+		// Check distance to all objects in the list.
+		foreach (Transform objTransform in transforms)
+		{
+			float distance = Vector3.Distance(potentialPosition, objTransform.position);
+			if (distance < collectable.minDistance)
+			{
+				return Vector3.zero; 
+			}
+		}
+
+		return potentialPosition;
+>>>>>>> Stashed changes
 	}
 }
