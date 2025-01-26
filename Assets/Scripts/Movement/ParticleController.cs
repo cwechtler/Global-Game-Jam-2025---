@@ -6,19 +6,23 @@ using UnityEngine;
 public class ParticleController : MonoBehaviour
 {
 	[SerializeField] private float maxRateOverTime = 30f;
+    [SerializeField] private AudioClip spraySound; // The sound to play when emitting particles
 
     private ParticleSystem myParticleSystem;
 	private ParticleSystem.MainModule main;
-	private ParticleSystem.EmissionModule emission;
+	private ParticleSystem.EmissionModule emission; 
+    private AudioSource audioSource; // AudioSource to play the sound
 
-	private float inputRightTrigger = 0;
+    private float inputRightTrigger = 0;
+
 
 	void Start()
     {
 		myParticleSystem = GetComponent<ParticleSystem>();
 		main = myParticleSystem.main;
 		emission = myParticleSystem.emission;
-	}
+        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component on the same GameObject
+    }
 
     void Update()
     {
@@ -29,7 +33,13 @@ public class ParticleController : MonoBehaviour
 			{
 				inputRightTrigger += 1f * Time.deltaTime; // Increase value over time
 			}
-		}
+            
+			// Play the spray sound if the particles are emitting
+            if (!audioSource.isPlaying)
+            {
+                audioSource.PlayOneShot(spraySound); // Play the sound when the emission starts
+            }
+        }
 		else {
 			inputRightTrigger = Input.GetAxis("Trigger");
 		}
