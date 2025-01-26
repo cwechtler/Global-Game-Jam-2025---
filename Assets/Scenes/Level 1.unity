@@ -851,6 +851,7 @@ MonoBehaviour:
   transformYPosition: -2.67
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!1001 &586538155
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -920,6 +921,8 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1766,11 +1769,14 @@ Transform:
   m_PrefabAsset: {fileID: 0}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 --- !u!4 &1876339966 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 1607729387241789841, guid: 7405cf0fc3b7fac46b8d8fe4ca80adb6, type: 3}
   m_PrefabInstance: {fileID: 1607729388665075055}
   m_PrefabAsset: {fileID: 0}
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 =======
@@ -1981,7 +1987,10 @@ PrefabInstance:
   m_SourcePrefab: {fileID: 100100000, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
 <<<<<<< Updated upstream
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
 =======
+=======
+>>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
 --- !u!1001 &3919950692488318342
@@ -2046,6 +2055,9 @@ PrefabInstance:
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: b96781a7c23c99741b29386cd8c5b233, type: 3}
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes

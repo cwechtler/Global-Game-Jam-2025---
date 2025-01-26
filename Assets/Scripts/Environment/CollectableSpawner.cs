@@ -20,6 +20,9 @@ public class CollectableSpawner : MonoBehaviour
 	[Range(0f, 4f)]
 	[SerializeField] private float spawnerMinRange = 4f;
 <<<<<<< Updated upstream
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 =======
 >>>>>>> Stashed changes
