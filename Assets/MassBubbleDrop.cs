@@ -5,6 +5,7 @@ using UnityEngine;
 public class MassBubbleDrop : MonoBehaviour
 {
 	[SerializeField] private GameObject bubblePrefab;
+	[SerializeField] private Color bubbleColor;
 	[Tooltip("Time between new bubble spawns.  Value only pertains until the max number of allowable bubbles is hit.")]
 	[SerializeField] private int spawnTime = 0;
 	[Tooltip("Max # of Bubbles that can be onscreen at the same time.")]
@@ -39,6 +40,7 @@ public class MassBubbleDrop : MonoBehaviour
 			for (int i = 0; i < maxTotalBubbles; i++) {
 				SpawnBubble();
 			}
+			SoundManager.instance.MassBubbles();
 			Destroy(gameObject);
 		}
 	}
@@ -52,6 +54,7 @@ public class MassBubbleDrop : MonoBehaviour
 			lastBubble = Instantiate(bubblePrefab, new Vector3(transformXPosition, 6, 1), Quaternion.identity).transform;
 			lastBubble.transform.parent = bubbleParent.transform;
 			lastBubble.GetComponent<Bubble>().isValid = false;
+			lastBubble.GetComponent <SpriteRenderer>().color = bubbleColor;
 			transforms.Add(lastBubble);
 		}
 		else

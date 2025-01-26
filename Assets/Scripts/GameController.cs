@@ -12,7 +12,7 @@ public class GameController : MonoBehaviour
 	public bool isPaused { get; private set; }
 	public float timeDeltaTime { get; private set; }
 	public int Score { get; set; } = 0;
-	public int totalBubbles { get; private set; } = 50;
+	public int totalBubbles { get; private set; } = 15;
 	public int whaleCryCounter { get; set; } = 4;
 
 	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
@@ -88,7 +88,7 @@ public class GameController : MonoBehaviour
 
 	public void resetGame() {
 		Score = 0;
-		totalBubbles = 50;
+		totalBubbles = 15;
 	}
 
 	public void SubtractBubbles() {

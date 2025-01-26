@@ -353,5 +353,6 @@ MonoBehaviour:
   - {fileID: 8300000, guid: 2e91a6e6560863d41af241dde3c5324b, type: 3}
   scoreClip: {fileID: 8300000, guid: fb7ccfb649336934caf597341ca4fc09, type: 3}
   doubleScoreClip: {fileID: 8300000, guid: 4d31d9c1c63f86447ade84d519910e51, type: 3}
+  massBubblesClip: {fileID: 8300000, guid: c722e044017c86d4c985ccf332ef576e, type: 3}
   extraWhaleClip: {fileID: 8300000, guid: 4d31d9c1c63f86447ade84d519910e51, type: 3}
   whaleCryClip: {fileID: 8300000, guid: 764f8721eb8dff54d862947f0250b284, type: 3}

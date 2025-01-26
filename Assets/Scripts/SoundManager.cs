@@ -19,6 +19,7 @@ public class SoundManager : MonoBehaviour {
 	[Space]
 	[SerializeField] private AudioClip scoreClip;
 	[SerializeField] private AudioClip doubleScoreClip;
+	[SerializeField] private AudioClip massBubblesClip;
 	[SerializeField] private AudioClip extraWhaleClip;
 	[SerializeField] private AudioClip whaleCryClip;
 
@@ -138,7 +139,11 @@ public class SoundManager : MonoBehaviour {
 	{
 		SFXAudioSource.pitch = 1f;
 		SFXAudioSource.PlayOneShot(whaleCryClip, 2f);
-		Debug.Log("played Whale sound");
+	}
+	public void MassBubbles()
+	{
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(massBubblesClip, 2f);
 	}
 
 	public void Score()
