@@ -97,6 +97,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 2
+  doublePointsColor: {r: 1, g: 0, b: 0.95554924, a: 1}
+  allChildSpriteRenderers: []
+  ColorList: []
 --- !u!1 &8172772858013836093
 GameObject:
   m_ObjectHideFlags: 0

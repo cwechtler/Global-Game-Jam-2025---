@@ -2663,6 +2663,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 5830924196417689760, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7678479295360051996, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
       propertyPath: m_IsActive
       value: 0
@@ -2678,6 +2682,22 @@ PrefabInstance:
     - target: {fileID: 7678479295360051999, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292349040095134038, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
+      propertyPath: doublePointsColor.a
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292349040095134038, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
+      propertyPath: doublePointsColor.b
+      value: 0.98310184
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292349040095134038, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
+      propertyPath: doublePointsColor.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8292349040095134038, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
+      propertyPath: doublePointsColor.r
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df7a7b9238b5cf64ba1d79129eb5f773, type: 3}
