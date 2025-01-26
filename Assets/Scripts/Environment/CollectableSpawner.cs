@@ -29,12 +29,13 @@ public class CollectableSpawner : MonoBehaviour
 {
 	[SerializeField] private Collectable[] collectables;
 	[Space]
-	[Tooltip("Farthest up from the center the prefabs can randomly spawn.")]
-	[Range(-3f, 0f)]
-	[SerializeField] private float spawnerMaxRange = -3f;
-	[Tooltip("Farthest bottom from the center the prefabs can randomly spawn.")]
+	[Tooltip("Farthest up is at 4. The center is 0. Range the prefabs can randomly spawn.")]
 	[Range(0f, 4f)]
-	[SerializeField] private float spawnerMinRange = 4f;
+	[SerializeField] private float spawnerMaxRange = 4f;
+	[Tooltip("Farthest bottom is at -3. The center is 0. Range the prefabs can randomly spawn.")]
+	[Range(-2f, 0f)]
+	[SerializeField] private float spawnerMinRange = -2f;
+
 
 	private Transform lastItem;
 	private List<Transform> transforms = new List<Transform>();
@@ -84,7 +85,7 @@ public class CollectableSpawner : MonoBehaviour
 	private Vector3 GetValidSpawnPosition(Collectable collectable)
 	{
 		// Set the potential position with fixed X and Z and a random Y coordinates.
-		Vector3 potentialPosition = new Vector3(11, Random.Range(spawnerMaxRange, spawnerMinRange), 1);
+		Vector3 potentialPosition = new Vector3(11, Random.Range(spawnerMinRange, spawnerMaxRange), 1);
 
 		// Check distance to all objects in the list.
 		foreach (Transform objTransform in transforms)

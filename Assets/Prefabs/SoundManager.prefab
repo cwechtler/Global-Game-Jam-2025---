@@ -350,3 +350,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d711ae8d0c10fdc47b675c8e77890a0a, type: 3}
   - {fileID: 8300000, guid: 76d8056f570dfc54d9ba52e292a6d163, type: 3}
   - {fileID: 8300000, guid: 2e91a6e6560863d41af241dde3c5324b, type: 3}
+  scoreClip: {fileID: 8300000, guid: fb7ccfb649336934caf597341ca4fc09, type: 3}

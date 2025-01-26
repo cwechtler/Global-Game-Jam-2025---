@@ -111,16 +111,16 @@ public class LevelManager : MonoBehaviour {
 				clipIndex = 0;
 				break;
 			case LoseLevelString:
-				clipIndex = 2;
+				clipIndex = 0;
 				break;
 			case WinLevelString:
-				clipIndex = 1;
+				clipIndex = 0;
 				break;
-			case Level1String:	
-				clipIndex = randomIndex;
+			case Level1String:
+				clipIndex = 0;// randomIndex;
 				break;
 			case "Level 2":
-				clipIndex = randomIndex;
+				clipIndex = 0;// randomIndex;
 				break;
 			default:
 				clipIndex = 0;

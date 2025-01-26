@@ -4,8 +4,29 @@ using UnityEngine;
 
 public class PassThroughDetector : MonoBehaviour
 {
+	private SpriteRenderer[] allChildSpriteRenderers;
 	private bool enteredLeft = false;
 	private bool enteredRight = false;
+
+	private void Start()
+	{
+		allChildSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+	}
+
+	private void Update()
+	{
+		foreach (SpriteRenderer childSpriteRenderer in allChildSpriteRenderers)
+		{
+			if (GameController.instance.IsDoublePoints)
+			{
+				childSpriteRenderer.color = new Color(1f, 0.478f, 0f, 1f); //#FF7A00
+			}
+			else
+			{
+				childSpriteRenderer.color = Color.white;
+			}
+		}		
+	}
 
 	private void OnTriggerEnter2D(Collider2D other)
 	{
@@ -43,7 +64,8 @@ public class PassThroughDetector : MonoBehaviour
 	}
 
 	private void Score() {
-		GameController.instance.Score++;
+		GameController.instance.SetScore(1);
+		SoundManager.instance.Score();
 	}
 }
 

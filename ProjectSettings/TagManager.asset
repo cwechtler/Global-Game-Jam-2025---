@@ -10,6 +10,7 @@ TagManager:
   - Bubble Blocker
   - Collectable
   - Destroyer
+  - Extra Whale
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - BackGround
   - Collectable
   - Destroyer
-  - 
+  - Whale
   - 
   - 
   - 

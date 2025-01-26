@@ -16,6 +16,10 @@ public class SoundManager : MonoBehaviour {
 	[Space]
 	[SerializeField] private AudioClip buttonClick;
 	[SerializeField] private AudioClip[] bubblePops;
+	[Space]
+	[SerializeField] private AudioClip scoreClip;
+	[SerializeField] private AudioClip doubleScoreClip;
+	[SerializeField] private AudioClip extraWhaleClip;
 
 	public int MusicArrayLength { get => music.Length; }
 
@@ -128,6 +132,23 @@ public class SoundManager : MonoBehaviour {
 	public AudioClip BubblePop(){
 		int clip = Random.Range(0, bubblePops.Length);
 		return bubblePops[clip];
+	}
+
+	public void Score()
+	{
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(scoreClip, 2f);
+	}
+	public void DoubleScore()
+	{
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(doubleScoreClip, 2f);
+	}
+
+	public void ExtraWhale()
+	{
+		SFXAudioSource.pitch = 1f;
+		SFXAudioSource.PlayOneShot(extraWhaleClip, 2f);
 	}
 
 	public void SetButtonClip(){
