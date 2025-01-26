@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 	public bool isPaused { get; private set; }
 	public float timeDeltaTime { get; private set; }
 	public int Score { get; set; } = 0;
+	public int whaleCryCounter { get; set; } = 4;
 
 	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
 	public bool IsDoublePoints { get => isDoublePoints; set => isDoublePoints = value; }
@@ -30,6 +31,8 @@ public class GameController : MonoBehaviour
 	public float extraWhaleTimeAmount;
 	
 	private GameObject extraWhale;
+
+
 
 	private void Awake()
 	{
