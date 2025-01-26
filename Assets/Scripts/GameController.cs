@@ -12,6 +12,7 @@ public class GameController : MonoBehaviour
 	public bool isPaused { get; private set; }
 	public float timeDeltaTime { get; private set; }
 	public int Score { get; set; } = 0;
+	public int totalBubbles { get; private set; }
 	public int whaleCryCounter { get; set; } = 4;
 
 	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
@@ -73,6 +74,11 @@ public class GameController : MonoBehaviour
 				extraWhaleCounter = extraWhaleTimeAmount;
 			}
 		}
+
+		//if (totalBubbles <= 0) {
+		//	//end game...
+		//	LevelManager.instance.LoadNextLevel();
+		//}
 		//if (Input.GetButtonDown("Pause")) {
 		//	if (!isPaused) {
 		//		PauseGame();
@@ -85,6 +91,10 @@ public class GameController : MonoBehaviour
 
 	public void resetGame() {
 		Score = 0;
+	}
+
+	public void SubtractBubbles() {
+		totalBubbles--;
 	}
 
 	public void ExtraWhale(float time, GameObject extraWhale) {

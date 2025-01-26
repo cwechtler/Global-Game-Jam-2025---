@@ -12,6 +12,7 @@ public class Bubble : MonoBehaviour
 	[SerializeField] private float maxForce = 1f;
 	[Tooltip("Max speed the object can move")]
 	[SerializeField] private float maxSpeed = 3f;
+	[SerializeField] private bool isValid = true;
 
 	private Rigidbody2D myRigidbody2D;
 	private AudioSource audioSource;
@@ -44,6 +45,10 @@ public class Bubble : MonoBehaviour
 				{
 					Debug.Log(clip.length);
 					 StartCoroutine(PlayWhaleSound(clip.length - .2f));		
+				}
+
+				if (isValid) {
+					GameController.instance.SubtractBubbles();
 				}
 
 				Destroy(gameObject, clip.length);

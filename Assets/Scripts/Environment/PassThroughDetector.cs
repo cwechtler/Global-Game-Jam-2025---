@@ -5,27 +5,38 @@ using UnityEngine;
 public class PassThroughDetector : MonoBehaviour
 {
 	[SerializeField] private int scoreAmount = 2;
-	private SpriteRenderer[] allChildSpriteRenderers;
+	[SerializeField] private Color doublePointsColor;
+	public SpriteRenderer[] allChildSpriteRenderers;
 	private bool enteredLeft = false;
 	private bool enteredRight = false;
+
+	public List<Color> ColorList = new List<Color>();
 
 	private void Start()
 	{
 		allChildSpriteRenderers = GetComponentsInChildren<SpriteRenderer>();
+
+		for (int i = 0; i < allChildSpriteRenderers.Length; i++) {
+			ColorList.Add(allChildSpriteRenderers[i].color);
+		}
 	}
 
 	private void Update()
 	{
-		foreach (SpriteRenderer childSpriteRenderer in allChildSpriteRenderers)
+		for (int i = 0; i < allChildSpriteRenderers.Length; i++)
 		{
 			if (GameController.instance.IsDoublePoints)
 			{
-				childSpriteRenderer.color = new Color(1f, 0.478f, 0f, 1f); //#FF7A00
+				allChildSpriteRenderers[i].color = doublePointsColor; //new Color(1f, 0.478f, 0f, 1f); //#FF7A00
 			}
 			else
 			{
-                childSpriteRenderer.color = new Color(0.922f, 0.765f, 0.612f, 1f);
-            }
+				allChildSpriteRenderers[i].color = ColorList[i]; //new Color(0.922f, 0.765f, 0.612f, 1f);
+			}
+		}
+		foreach (SpriteRenderer childSpriteRenderer in allChildSpriteRenderers)
+		{
+
 		}		
 	}
 
