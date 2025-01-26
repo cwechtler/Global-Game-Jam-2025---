@@ -2137,10 +2137,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Whale
       objectReference: {fileID: 0}
-    - target: {fileID: 1992952181471806420, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
-      propertyPath: m_TagString
-      value: Player
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 525b37e4ea17a3c42935fa8d6570521d, type: 3}
 --- !u!4 &1185572784 stripped
