@@ -4,8 +4,6 @@ using UnityEngine;
 
 public class PassThroughDetector : MonoBehaviour
 {
-	[SerializeField] private int scoreAmount = 2;
-
 	private SpriteRenderer[] allChildSpriteRenderers;
 	private bool enteredLeft = false;
 	private bool enteredRight = false;
@@ -25,8 +23,8 @@ public class PassThroughDetector : MonoBehaviour
 			}
 			else
 			{
-				childSpriteRenderer.color = new Color(0.922f, 0.765f, 0.612f, 1f);
-			}
+                childSpriteRenderer.color = new Color(0.922f, 0.765f, 0.612f, 1f);
+            }
 		}		
 	}
 
@@ -66,7 +64,7 @@ public class PassThroughDetector : MonoBehaviour
 	}
 
 	private void Score() {
-		GameController.instance.SetScore(scoreAmount);
+		GameController.instance.SetScore(1);
 		SoundManager.instance.Score();
 	}
 }
