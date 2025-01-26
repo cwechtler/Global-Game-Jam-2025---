@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class PassThroughDetector : MonoBehaviour
 {
+	[SerializeField] private int scoreAmount = 2;
 	private SpriteRenderer[] allChildSpriteRenderers;
 	private bool enteredLeft = false;
 	private bool enteredRight = false;
@@ -64,7 +65,7 @@ public class PassThroughDetector : MonoBehaviour
 	}
 
 	private void Score() {
-		GameController.instance.SetScore(1);
+		GameController.instance.SetScore(scoreAmount);
 		SoundManager.instance.Score();
 	}
 }

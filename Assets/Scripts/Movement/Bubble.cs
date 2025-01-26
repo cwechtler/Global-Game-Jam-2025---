@@ -16,30 +16,47 @@ public class Bubble : MonoBehaviour
 	private Rigidbody2D myRigidbody2D;
 	private AudioSource audioSource;
 
+
 	void Start()
 	{
 		myRigidbody2D = GetComponent<Rigidbody2D>();
 		audioSource = GetComponent<AudioSource>();
+
 	}
 
 	private void OnCollisionEnter2D(Collision2D collision)
 	{
 		if (!collision.gameObject.CompareTag("Bubble"))
 		{
+			GameController.instance.whaleCryCounter--;
 			collisionsAllowed--;
 			if (collisionsAllowed == 0)
 			{
 				myRigidbody2D.velocity = Vector2.zero;
 
 				CircleCollider2D circleCollider2D = GetComponent<CircleCollider2D>();
-				circleCollider2D.enabled = false;
 
 				AudioClip clip = SoundManager.instance.BubblePop();
 				audioSource.PlayOneShot(clip);
+				circleCollider2D.enabled = false;
+
+				if (GameController.instance.whaleCryCounter <= 0)
+				{
+					Debug.Log(clip.length);
+					 StartCoroutine(PlayWhaleSound(clip.length - .2f));		
+				}
 
 				Destroy(gameObject, clip.length);
 			}
 		}
+	}
+
+	private IEnumerator PlayWhaleSound(float time) {
+		Debug.Log("play Whale sound");
+		GameController.instance.whaleCryCounter = 4;
+		yield return new WaitForSeconds(time);
+		Debug.Log("playing Whale sound");
+		SoundManager.instance.WhaleCry();
 	}
 
 	//private void OnTriggerEnter2D(Collider2D collision)

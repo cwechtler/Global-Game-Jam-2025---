@@ -4,13 +4,14 @@ using UnityEngine;
 
 public class StarCollectable : MonoBehaviour
 {
-	[SerializeField] int scoreAmount = 1;
+	[SerializeField] private int scoreAmount = 1;
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
 		if (collision.gameObject.CompareTag("Bubble"))
 		{
 			Score();
+			Destroy(gameObject);
 		}
 	}
 
