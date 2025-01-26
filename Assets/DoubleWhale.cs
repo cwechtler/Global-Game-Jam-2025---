@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class DoubleWhale : MonoBehaviour
 {
-	[SerializeField] private float extraWhaleTimeAmount;
+	[SerializeField] private float extraWhaleTimeAmount = 10f;
 	[SerializeField] GameObject whalePrefab;
 
 	GameObject player;
