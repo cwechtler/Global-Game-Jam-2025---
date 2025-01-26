@@ -19,6 +19,9 @@ public class CollectableSpawner : MonoBehaviour
 	[Tooltip("Farthest bottom from the center the prefabs can randomly spawn.")]
 	[Range(0f, 4f)]
 	[SerializeField] private float spawnerMinRange = 4f;
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
+=======
 >>>>>>> Stashed changes
 
 	private Transform lastItem;
