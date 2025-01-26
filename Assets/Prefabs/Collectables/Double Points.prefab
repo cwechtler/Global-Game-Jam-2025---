@@ -113,3 +113,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   doublePointsTimeAmount: 20
+  awardSound: {fileID: 8300000, guid: 4d31d9c1c63f86447ade84d519910e51, type: 3}

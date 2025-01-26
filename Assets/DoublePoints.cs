@@ -4,15 +4,16 @@ using UnityEngine;
 
 public class DoublePoints : MonoBehaviour
 {
-	[SerializeField] private float doublePointsTimeAmount;
-
+	[SerializeField] private float doublePointsTimeAmount;   
+	
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.gameObject.CompareTag("Bubble"))
+
+        if (collision.gameObject.CompareTag("Bubble"))
 		{
-			GameController.instance.DoublePoints(doublePointsTimeAmount);
+            GameController.instance.DoublePoints(doublePointsTimeAmount);
 			SoundManager.instance.DoubleScore();
-			Destroy(gameObject);
-		}
+			Destroy(gameObject);           
+        }
 	}
 }
