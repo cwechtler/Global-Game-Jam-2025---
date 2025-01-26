@@ -54,7 +54,7 @@ public class MassBubbleDrop : MonoBehaviour
 			lastBubble = Instantiate(bubblePrefab, new Vector3(transformXPosition, 6, 1), Quaternion.identity).transform;
 			lastBubble.transform.parent = bubbleParent.transform;
 			lastBubble.GetComponent<Bubble>().isValid = false;
-			lastBubble.GetComponent <SpriteRenderer>().color = bubbleColor;
+			lastBubble.GetComponentInChildren<SpriteRenderer>().color = bubbleColor;
 			transforms.Add(lastBubble);
 		}
 		else
