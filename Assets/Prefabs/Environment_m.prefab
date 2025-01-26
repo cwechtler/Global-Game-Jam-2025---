@@ -518,7 +518,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   prefab: {fileID: 2390032781099509032, guid: 044981d734aaab64f8515d518a1b5ff7, type: 3}
-  prefabWidth: 20.45
+  prefabWidth: 20.475
   spawnThreshold: 10
   initialXPosition: -2
   transformYPosition: 0
