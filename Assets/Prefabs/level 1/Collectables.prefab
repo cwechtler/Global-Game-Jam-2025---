@@ -111,8 +111,8 @@ MonoBehaviour:
     minDistance: 2
     spawnOnLaunch: 0
     collectableCounter: 0
-  - Prefab: {fileID: 4869014818502488730, guid: 020f8d8cdb630114ca020e745d94aea7, type: 3}
-    spawnTime: 52
+  - Prefab: {fileID: 0}
+    spawnTime: 7
     minDistance: 2
     spawnOnLaunch: 0
     collectableCounter: 0
