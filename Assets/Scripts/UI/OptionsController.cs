@@ -8,6 +8,7 @@ public class OptionsController : MonoBehaviour {
 	//Difficulty level
 	//Key bindings
 
+	[SerializeField] private Toggle mouseControl;
 	[Space]
 	[SerializeField] private Slider masterVolumeSlider;
 	[SerializeField] private Slider musicVolumeSlider;
@@ -22,7 +23,7 @@ public class OptionsController : MonoBehaviour {
 	void Start ()
 	{
 		startSliderInSelected.Select();
-
+		
 		//if (GameController.instance.isPaused) {
 		//	canvasGroup = canvasGroupPanel.GetComponent<CanvasGroup>();
 		//	canvasGroupAnimator = canvasGroupPanel.GetComponent<Animator>();
@@ -33,6 +34,13 @@ public class OptionsController : MonoBehaviour {
 		//}
 
 		GetSavedVolumeKeys();
+		if (PlayerPrefs.HasKey("mouse_controls"))
+		{
+			mouseControl.isOn = PlayerPrefsManager.GetMouseControls();
+		}
+		else {
+			mouseControl.isOn = GameController.instance.MouseControl;
+		}
 	}
 
 	void Update()
@@ -40,6 +48,8 @@ public class OptionsController : MonoBehaviour {
 		SoundManager.instance.ChangeMasterVolume(masterVolumeSlider.value);
 		SoundManager.instance.ChangeMusicVolume(musicVolumeSlider.value);
 		SoundManager.instance.ChangeSFXVolume(sfxVolumeSlider.value);
+
+		GameController.instance.MouseControl = mouseControl.isOn;
 	}
 
 	private void GetSavedVolumeKeys()
@@ -74,6 +84,7 @@ public class OptionsController : MonoBehaviour {
 		PlayerPrefsManager.SetMasterVolume (masterVolumeSlider.value);
 		PlayerPrefsManager.SetMusicVolume (musicVolumeSlider.value);
 		PlayerPrefsManager.SetSFXVolume(sfxVolumeSlider.value);
+		PlayerPrefsManager.SetMouseControls(mouseControl.isOn);
 		LevelManager.instance.LoadLevel(LevelManager.MainMenuString);
 
 		//if (GameController.instance.isPaused)
@@ -92,5 +103,6 @@ public class OptionsController : MonoBehaviour {
 		masterVolumeSlider.value = -20f;
 		musicVolumeSlider.value = 0f;
 		sfxVolumeSlider.value = 0f;
+		mouseControl.isOn = false;
 	}
 }

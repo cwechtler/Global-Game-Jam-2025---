@@ -14,6 +14,7 @@ public class LoseCanvas : MonoBehaviour
 	{
 		animator = gameObject.GetComponent<Animator>();
 		total.text = GameController.instance.Score.ToString();
+
 	}
 
 	private void Update()

@@ -4,11 +4,16 @@ using UnityEngine;
 
 public class ParallaxBackgroundSpawner : MonoBehaviour
 {
-	[SerializeField] private GameObject prefab; 
-	[SerializeField] private float prefabWidth = 10f; 
+	[Tooltip("Prefab to spawn.")]
+	[SerializeField] private GameObject prefab;
+	[Tooltip("The width of the Prefab so the next spawned prefab lines up end to end.")]
+	[SerializeField] private float prefabWidth = 10f;
+	[Tooltip("How far to the right of the camera the Prefab will spawn.")]
 	[SerializeField] private float spawnThreshold = 10f;
 	[Space]
+	[Tooltip("Position only the inital prefab will spawn in X.")]
 	[SerializeField] private float initialXPosition = 0;
+	[Tooltip("Position all the prefabs will spawn at in Y.")]
 	[SerializeField] private float transformYPosition = 0;
 
 	private Transform lastBackground;

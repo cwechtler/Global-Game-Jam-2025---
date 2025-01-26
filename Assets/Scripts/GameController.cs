@@ -13,9 +13,23 @@ public class GameController : MonoBehaviour
 	public float timeDeltaTime { get; private set; }
 	public int Score { get; set; } = 0;
 
-	public bool MouseControl { get; set; } = false;
+	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
+	public bool IsDoublePoints { get => isDoublePoints; set => isDoublePoints = value; }
+	public bool HasExtraWhale { get => hasExtraWhale; set => hasExtraWhale = value; }
+
+	private bool hasExtraWhale = false;
+	private bool mouseControl = false;
+	private bool isDoublePoints = false; 
 
 	private GameObject fadePanel;
+
+	public float doublePointsCounter;
+	public float doublePointsTimeAmount;
+
+	public float extraWhaleCounter;
+	public float extraWhaleTimeAmount;
+	
+	private GameObject extraWhale;
 
 	private void Awake()
 	{
@@ -26,11 +40,36 @@ public class GameController : MonoBehaviour
 			instance = this;
 			DontDestroyOnLoad(gameObject);
 		}
+		if (PlayerPrefs.HasKey("mouse_controls")) {
+			mouseControl = PlayerPrefsManager.GetMouseControls();
+		}
+		//extraWhale = GameObject.FindGameObjectWithTag("Extra Whale");
+		//extraWhale.SetActive(false);
 		//PlayerPrefsManager.DeleteAllPlayerPrefs();
 	}
 
 	private void Update()
 	{
+		if (IsDoublePoints) {
+			doublePointsCounter -= Time.deltaTime;
+
+			if (doublePointsCounter <= 0)
+			{
+				IsDoublePoints = false;
+				doublePointsCounter = doublePointsTimeAmount;
+			}
+		}
+		if (hasExtraWhale)
+		{
+			extraWhaleCounter -= Time.deltaTime;
+
+			if (extraWhaleCounter <= 0)
+			{
+				hasExtraWhale = false;
+				extraWhale.SetActive(false);
+				extraWhaleCounter = extraWhaleTimeAmount;
+			}
+		}
 		//if (Input.GetButtonDown("Pause")) {
 		//	if (!isPaused) {
 		//		PauseGame();
@@ -43,6 +82,31 @@ public class GameController : MonoBehaviour
 
 	public void resetGame() {
 		Score = 0;
+	}
+
+	public void ExtraWhale(float time, GameObject extraWhale) {
+		this.extraWhale = extraWhale;
+		extraWhaleTimeAmount = time;
+		extraWhaleCounter += time;
+		HasExtraWhale = true;
+	}
+
+	public void DoublePoints(float time)
+	{
+		doublePointsTimeAmount = time;
+		doublePointsCounter += time;
+		IsDoublePoints = true;
+	}
+
+	public void SetScore(int amount) {
+		if (IsDoublePoints == true)
+		{
+			Score += (amount * 2);
+		}
+		else {
+			Score += amount;
+		}
+
 	}
 
 	public void FadePanel()

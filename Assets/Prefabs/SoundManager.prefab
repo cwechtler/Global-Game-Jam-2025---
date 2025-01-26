@@ -339,7 +339,8 @@ MonoBehaviour:
   MusicAudioSource: {fileID: 5739616327053476989}
   SFXAudioSource: {fileID: 5739616327053476986}
   ambientAudioSource: {fileID: 5739616327053476987}
-  music: []
+  music:
+  - {fileID: 8300000, guid: f77126742c7cf104b96e3148f4bc2e30, type: 3}
   ambientClips: []
   movementClips: []
   buttonClick: {fileID: 0}
@@ -349,3 +350,4 @@ MonoBehaviour:
   - {fileID: 8300000, guid: d711ae8d0c10fdc47b675c8e77890a0a, type: 3}
   - {fileID: 8300000, guid: 76d8056f570dfc54d9ba52e292a6d163, type: 3}
   - {fileID: 8300000, guid: 2e91a6e6560863d41af241dde3c5324b, type: 3}
+  scoreClip: {fileID: 8300000, guid: fb7ccfb649336934caf597341ca4fc09, type: 3}

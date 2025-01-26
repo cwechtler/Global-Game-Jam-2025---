@@ -52,9 +52,6 @@ public class Paddle : MonoBehaviour {
 	void Move(){
 		float inputX = Input.GetAxis("Horizontal");
 		rb.velocity = new Vector2(inputX * paddlespeed, rb.velocity.y);
-		
-		// This allows for snapping back to the center. use instead of rb.velocity.
-		//this.transform.position = new Vector3(inputX, this.transform.position.y, this.transform.position.z);
 
 		// Clamp position
 		Vector3 clampedPosition = transform.position;
@@ -64,9 +61,10 @@ public class Paddle : MonoBehaviour {
 
 	void Rotate(bool invert = false) {
 		float inputZ = Input.GetAxis(invert ? "Horizontal" : "Horizontal2");
-		// Remap inputZ (-1 to 1) to (-60 to 0)
-		float mappedRotation = Mathf.Lerp(-60f, 0f, (inputZ + 1) / 2f);
 		nozzle.localEulerAngles = new Vector3(0, 0, inputZ * rotationDegrees);
+
+		// Remap inputZ (-1 to 1) to (-60 to 0) for Whale Tail
+		float mappedRotation = Mathf.Lerp(-60f, 0f, (inputZ + 1) / 2f);
 		tail.localEulerAngles = new Vector3(0, 0, mappedRotation);
 	}
 }

@@ -22,8 +22,9 @@ public class ParticleController : MonoBehaviour
 
     void Update()
     {
-		if (Input.GetKey(KeyCode.UpArrow))
+		if (!GameController.instance.MouseControl ? Input.GetKey(KeyCode.UpArrow) : Input.GetMouseButton(0))
 		{
+			Debug.Log("key or mouse");
 			if (emission.rateOverTime.constant < maxRateOverTime)
 			{
 				inputRightTrigger += 1f * Time.deltaTime; // Increase value over time
@@ -32,7 +33,8 @@ public class ParticleController : MonoBehaviour
 		else {
 			inputRightTrigger = Input.GetAxis("Trigger");
 		}
-		if (Input.GetKeyUp(KeyCode.UpArrow)){
+		if (!GameController.instance.MouseControl ? Input.GetKeyUp(KeyCode.UpArrow) : Input.GetMouseButtonUp(0))
+		{
 			inputRightTrigger = 0;
 		}
 
