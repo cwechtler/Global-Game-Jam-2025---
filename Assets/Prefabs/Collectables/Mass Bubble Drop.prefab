@@ -113,7 +113,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   bubblePrefab: {fileID: 8839901508744085154, guid: 24fbf428dd98e004982f51f70197553d, type: 3}
-  bubbleParent: {fileID: 0}
+  bubbleColor: {r: 1, g: 0.654902, b: 0.9882353, a: 1}
   spawnTime: 0
   maxTotalBubbles: 20
   minDistance: 1.5
