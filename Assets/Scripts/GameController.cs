@@ -15,6 +15,7 @@ public class GameController : MonoBehaviour
 
 	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
 	private bool mouseControl = false;
+	public bool doublePoints { get; set; } 
 
 	private GameObject fadePanel;
 
