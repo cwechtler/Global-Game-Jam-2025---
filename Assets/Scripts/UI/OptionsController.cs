@@ -4,7 +4,6 @@ using UnityEngine.UI;
 
 public class OptionsController : MonoBehaviour {
 
-	//turn tips off
 	//Difficulty level
 	//Key bindings
 

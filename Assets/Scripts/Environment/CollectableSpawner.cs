@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -36,7 +35,6 @@ public class CollectableSpawner : MonoBehaviour
 	[Range(-2f, 0f)]
 	[SerializeField] private float spawnerMinRange = -2f;
 
-
 	private Transform lastItem;
 	private List<Transform> transforms = new List<Transform>();
 
@@ -44,7 +42,6 @@ public class CollectableSpawner : MonoBehaviour
 	{
 		for (int i = 0; i < collectables.Length; i++)
 		{
-
 			if (collectables[i].spawnOnLaunch) {
 				collectables[i].collectableCounter = collectables[i].spawnTime;
 				SpawnCollectable(collectables[i]);
@@ -77,7 +74,7 @@ public class CollectableSpawner : MonoBehaviour
 			}
 			else
 			{
-				Debug.LogWarning("Could not find a valid spawn position.");
+				Debug.LogWarning(collectable.Prefab.name + " Could not find a valid spawn position.");
 			}
 		}
 	}

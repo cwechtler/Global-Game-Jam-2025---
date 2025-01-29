@@ -182,8 +182,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: "Mike \nThompson"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -556,14 +556,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Level Manager
       objectReference: {fileID: 0}
-    - target: {fileID: 3871623961424445353, guid: ef18036bd85a7b94ea95fddb574f25d4, type: 3}
-      propertyPath: sessionStorageItem
-      value: Jam-Game
-      objectReference: {fileID: 0}
-    - target: {fileID: 3871623961424445353, guid: ef18036bd85a7b94ea95fddb574f25d4, type: 3}
-      propertyPath: setSessionStorageGameQuitURL
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 5593258878902377785, guid: ef18036bd85a7b94ea95fddb574f25d4, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -669,8 +661,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Start
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -988,9 +980,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.50980395, g: 0.47843137, b: 0.35686275, a: 1}
+    m_PressedColor: {r: 0.3018868, g: 0.2763211, b: 0.19195443, a: 1}
+    m_SelectedColor: {r: 0.509434, g: 0.47721934, b: 0.357565, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1022,10 +1014,10 @@ MonoBehaviour:
           m_StringArgument: Options
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1791230851}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
+      - m_Target: {fileID: 1791230849}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -1106,8 +1098,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 51.000122, y: 220.59755}
-  m_SizeDelta: {x: 278, y: 50}
+  m_AnchoredPosition: {x: 45.073, y: 220.59755}
+  m_SizeDelta: {x: 289.855, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &770806030
 MonoBehaviour:
@@ -1131,8 +1123,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'CREATED BY:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1521,7 +1513,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 76c392e42b5098c458856cdf6ecaaaa1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_FirstSelected: {fileID: 1533623413}
+  m_FirstSelected: {fileID: 0}
   m_sendNavigationEvents: 1
   m_DragThreshold: 10
 --- !u!4 &1209187668
@@ -1597,8 +1589,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Patrick Santerre
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1907,8 +1899,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Craig Wechtler
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2200,8 +2192,8 @@ GameObject:
   - component: {fileID: 1533623417}
   - component: {fileID: 1533623416}
   - component: {fileID: 1533623415}
-  - component: {fileID: 1533623419}
   - component: {fileID: 1533623418}
+  - component: {fileID: 1533623419}
   m_Layer: 5
   m_Name: Start Button
   m_TagString: Untagged
@@ -2251,9 +2243,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.8113208, g: 0.8028695, b: 0, a: 1}
+    m_PressedColor: {r: 0.5754717, g: 0.5687015, b: 0, a: 1}
+    m_SelectedColor: {r: 0.8117647, g: 0.8039216, b: 0, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -2285,10 +2277,10 @@ MonoBehaviour:
           m_StringArgument: MikeTest
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1791230851}
-        m_TargetAssemblyTypeName: UnityEngine.ParticleSystem, UnityEngine
-        m_MethodName: Stop
-        m_Mode: 1
+      - m_Target: {fileID: 1791230849}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
@@ -2354,7 +2346,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1533623413}
-  m_Enabled: 0
+  m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 5fc4ac8dd9848aa41955c4c41c21339c, type: 3}
   m_Name: 
@@ -2493,8 +2485,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Options
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -2579,7 +2571,6 @@ GameObject:
   - component: {fileID: 1791230853}
   - component: {fileID: 1791230852}
   - component: {fileID: 1791230851}
-  - component: {fileID: 1791230850}
   m_Layer: 0
   m_Name: Particle System
   m_TagString: Untagged
@@ -2587,20 +2578,6 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!114 &1791230850
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1791230849}
-  m_Enabled: 0
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ee47999d1746d3f4ca80210d7abf60f9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  maxRateOverTime: 30
-  spraySound: {fileID: 0}
 --- !u!198 &1791230851
 ParticleSystem:
   m_ObjectHideFlags: 0
@@ -7604,8 +7581,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Joe Sacino
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8024,8 +8001,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Quit
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
+  m_sharedMaterial: {fileID: -1242221953762123493, guid: d5aac7aba50bb104cac16fa86e88c9d9, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -8173,9 +8150,9 @@ MonoBehaviour:
   m_Transition: 1
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
-    m_HighlightedColor: {r: 1, g: 1, b: 1, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_HighlightedColor: {r: 0.566722, g: 0.44912782, b: 0.7169812, a: 1}
+    m_PressedColor: {r: 0.42866522, g: 0.3276611, b: 0.5566038, a: 1}
+    m_SelectedColor: {r: 0.5686275, g: 0.4509804, b: 0.7176471, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

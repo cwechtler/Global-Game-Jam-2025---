@@ -1,5 +1,4 @@
-﻿//using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -8,32 +7,33 @@ public class GameController : MonoBehaviour
 {
 	public static GameController instance = null;
 
-	public GameObject playerGO { get; private set; }
+	[Tooltip("Max bubble the player has before the end of the game.")]
+	[SerializeField] private int totalBubbles = 10;
+
+	public int TotalBubbles { get; private set; }
+	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
 	public bool isPaused { get; private set; }
 	public float timeDeltaTime { get; private set; }
 	public int Score { get; set; } = 0;
-	public int totalBubbles { get; private set; } = 5;
-	public int whaleCryCounter { get; set; } = 4;
 
-	public bool MouseControl { get => mouseControl; set => mouseControl = value; }
+	public int WhaleCryCounter { get; set; } = 4;
 	public bool IsDoublePoints { get => isDoublePoints; set => isDoublePoints = value; }
 	public bool HasExtraWhale { get => hasExtraWhale; set => hasExtraWhale = value; }
-
-	private bool hasExtraWhale = false;
-	private bool mouseControl = false;
-	private bool isDoublePoints = false; 
+	public float DoublePointsCounter { get => doublePointsCounter; set => doublePointsCounter = value; }
+	public float ExtraWhaleCounter { get => extraWhaleCounter; set => extraWhaleCounter = value; }
 
 	private GameObject fadePanel;
 
-	public float doublePointsCounter;
-	public float doublePointsTimeAmount;
+	private bool hasExtraWhale = false;
+	private bool mouseControl = false;
+	private bool isDoublePoints = false;
 
-	public float extraWhaleCounter;
-	public float extraWhaleTimeAmount;
-	
+	private float doublePointsCounter;
+	private float doublePointsTimeAmount;
+
 	private GameObject extraWhale;
-
-
+	private float extraWhaleCounter;
+	private float extraWhaleTimeAmount;
 
 	private void Awake()
 	{
@@ -47,8 +47,10 @@ public class GameController : MonoBehaviour
 		if (PlayerPrefs.HasKey("mouse_controls")) {
 			mouseControl = PlayerPrefsManager.GetMouseControls();
 		}
+		TotalBubbles = totalBubbles;
 		//extraWhale = GameObject.FindGameObjectWithTag("Extra Whale");
 		//extraWhale.SetActive(false);
+
 		//PlayerPrefsManager.DeleteAllPlayerPrefs();
 	}
 
@@ -60,7 +62,7 @@ public class GameController : MonoBehaviour
 			if (doublePointsCounter <= 0)
 			{
 				IsDoublePoints = false;
-				doublePointsCounter = doublePointsTimeAmount;
+				doublePointsCounter = 0;
 			}
 		}
 		if (hasExtraWhale)
@@ -75,26 +77,28 @@ public class GameController : MonoBehaviour
 			}
 		}
 
-
-		//if (Input.GetButtonDown("Pause")) {
-		//	if (!isPaused) {
-		//		PauseGame();
-		//	}
-		//	else {
-		//		ResumeGame();
-		//	}
-		//}
+		if (Input.GetButtonDown("Pause"))
+		{
+			if (!isPaused)
+			{
+				PauseGame();
+			}
+			else
+			{
+				ResumeGame();
+			}
+		}
 	}
 
 	public void resetGame() {
 		Score = 0;
-		totalBubbles = 5;
+		TotalBubbles = totalBubbles;
 	}
 
 	public void SubtractBubbles() {
-		totalBubbles--;
-		if (totalBubbles <= 0) {
-			LevelManager.instance.LoadNextLevel();
+		TotalBubbles--;
+		if (TotalBubbles <= 0) {
+			LevelManager.instance.LoadLevel("Lose Level");
 		}
 	}
 
@@ -108,7 +112,14 @@ public class GameController : MonoBehaviour
 	public void DoublePoints(float time)
 	{
 		doublePointsTimeAmount = time;
-		doublePointsCounter += time;
+		if (doublePointsCounter > 0)
+		{
+			doublePointsCounter += time;
+		}
+		else {
+			doublePointsCounter = doublePointsTimeAmount;
+		}
+
 		IsDoublePoints = true;
 	}
 
@@ -120,7 +131,6 @@ public class GameController : MonoBehaviour
 		else {
 			Score += amount;
 		}
-
 	}
 
 	public void FadePanel()
@@ -140,16 +150,6 @@ public class GameController : MonoBehaviour
 	{
 		Time.timeScale = 1;
 		isPaused = false;
-	}
-
-	private IEnumerator RespawnPlayer(int waitToSpawn)
-	{
-		yield return new WaitForSeconds(waitToSpawn);
-		//playerGO.transform.position = spawnPoint.transform.position;
-		playerGO.GetComponent<SpriteRenderer>().color = new Color(1, 1, 1, 1);
-		playerGO.gameObject.SetActive(true);
-		playerGO.GetComponent<Rigidbody2D>().isKinematic = false;
-		yield return new WaitForSeconds(1);
 	}
 
 	public IEnumerator FadeCanvasGroup_TimeScale_0(CanvasGroup canvasGroup, bool isPanelOpen, float fadeTime)

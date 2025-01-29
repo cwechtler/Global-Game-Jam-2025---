@@ -1,17 +1,14 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
 public class MassBubbleDrop : MonoBehaviour
 {
 	[SerializeField] private GameObject bubblePrefab;
-	[SerializeField] private Color bubbleColor;
-	[Tooltip("Time between new bubble spawns.  Value only pertains until the max number of allowable bubbles is hit.")]
-	[SerializeField] private int spawnTime = 0;
+	[SerializeField] private Color bubbleColor = new Color(1f, 0.655f, 0.988f, 1f); //#FFA7FC
 	[Tooltip("Max # of Bubbles that can be onscreen at the same time.")]
 	[SerializeField] private int maxTotalBubbles = 20;
 	[Tooltip("Minimum allowed distance to any other bubble.")]
-	public float minDistance = 2.0f;
+	[SerializeField] private float minDistance = 2.0f;
 	[Space]
 	[Tooltip("Farthest left from the center the bubbles can randomly spawn.")]
 	[Range(-8f, 0f)]
@@ -29,7 +26,7 @@ public class MassBubbleDrop : MonoBehaviour
 
 	private void Start()
 	{
-		bubbleParent = GameObject.FindGameObjectWithTag("Bubble Spawner"); 
+		bubbleParent = GameObject.FindGameObjectWithTag("Bubble Spawner");
 	}
 
 	private void OnTriggerEnter2D(Collider2D collision)
@@ -59,7 +56,7 @@ public class MassBubbleDrop : MonoBehaviour
 		}
 		else
 		{
-			Debug.LogWarning("Could not find a valid spawn position.");
+			Debug.LogWarning("Could not find a valid spawn position. Trying again.");
 		}
 	}
 	private Vector3 GetValidSpawnPosition(int maxAttempts = 100)

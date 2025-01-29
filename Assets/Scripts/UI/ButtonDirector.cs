@@ -23,4 +23,16 @@ public class ButtonDirector : MonoBehaviour
 	{
 		LevelManager.instance.QuitRequest();
 	}
+
+	public void StopAndClearParticles()
+	{
+		StartCoroutine(StopAndClear());
+	}
+
+	private IEnumerator StopAndClear() {
+		yield return new WaitForSeconds(.3f);
+		ParticleSystem whaleSpout = gameObject.GetComponentInChildren<ParticleSystem>();
+		whaleSpout.Stop();
+		whaleSpout.Clear();
+	}
 }

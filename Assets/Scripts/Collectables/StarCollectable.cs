@@ -5,10 +5,10 @@ using UnityEngine;
 public class StarCollectable : MonoBehaviour
 {
 	[SerializeField] private int scoreAmount = 1;
-	[SerializeField] private Color doublePointsColor;
+	[SerializeField] private Color doublePointsColor = new Color(0f, 1f, 0.682f, 1f); //#00FFAE ?4
 
 	private SpriteRenderer spriteRenderer;
-	private List<Color> ColorList = new List<Color>();
+	private List<Color> ColorList = new List<Color>(); // Main color #FECC00
 
 	private void Start()
 	{

@@ -87,6 +87,7 @@
         config.devicePixelRatio = 1;
         unityShowBanner('WebGL builds are not supported on mobile devices.');
       } else {
+        canvas.style.aspectRatio = "16/9";
         canvas.style.width = "auto";
         canvas.style.height = "calc(100% - 38px)";
       }

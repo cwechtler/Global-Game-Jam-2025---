@@ -140,13 +140,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 7476273294675045807}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cf2436a7dc23243449e67efcf0071957, type: 3}
+  m_Script: {fileID: 11500000, guid: b21fc141309a69e4abe94e95de59dd06, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   scoreAmount: 1
   doublePointsColor: {r: 0, g: 1, b: 0.68235296, a: 1}
-  spriteRenderer: {fileID: 6718078963042529477}
-  ColorList: []
 --- !u!95 &5413358797999500126
 Animator:
   serializedVersion: 3

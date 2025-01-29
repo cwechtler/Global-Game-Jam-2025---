@@ -1,7 +1,6 @@
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
-using System.Runtime.CompilerServices;
 
 public class CanvasController : MonoBehaviour
 {
@@ -13,29 +12,26 @@ public class CanvasController : MonoBehaviour
 	[SerializeField] private TextMeshProUGUI extraWhaleTimerText;
 	[SerializeField] private Toggle mouseControl;
 
-
 	private Animator animator;
-
-	private void Start()
-	{
-		
-	}
 
 	private void Update()
 	{
 		ScoreText.text = GameController.instance.Score.ToString();
-		doubleScoreText.text = GameController.instance.doublePointsCounter.ToString("0.00");
-		extraWhaleTimerText.text = GameController.instance.extraWhaleCounter.ToString("0.00");
-		bubbleCountText.text = GameController.instance.totalBubbles.ToString();
+		doubleScoreText.text = GameController.instance.DoublePointsCounter.ToString("0.00");
+		extraWhaleTimerText.text = GameController.instance.ExtraWhaleCounter.ToString("0.00");
+		bubbleCountText.text = GameController.instance.TotalBubbles.ToString();
 
-		//if (GameController.instance.isPaused) {
-		//	pausePanel.SetActive(true);
-		//}
-		//else {
-		//	pausePanel.SetActive(false);
-		//}
+		if (GameController.instance.isPaused)
+		{
+			pausePanel.SetActive(true);
+		}
+		else
+		{
+			pausePanel.SetActive(false);
+		}
 
-		GameController.instance.MouseControl = mouseControl.isOn;
+		// For Mouse Controls button on Level 1 for testing only.  Must remain commented out for normal play.
+		//GameController.instance.MouseControl = mouseControl.isOn;
 	}
 
 	public void MainMenu()

@@ -1,9 +1,8 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class DoubleWhale : MonoBehaviour
 {
+	//TODO Broken Needs to be fixed if I ever decide to implement this.
 	[SerializeField] private float extraWhaleTimeAmount = 10f;
 	[SerializeField] GameObject whalePrefab;
 

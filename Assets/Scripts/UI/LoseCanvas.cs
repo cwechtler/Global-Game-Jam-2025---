@@ -5,25 +5,15 @@ using UnityEngine.EventSystems;
 public class LoseCanvas : MonoBehaviour
 {
 	[SerializeField] private TextMeshProUGUI total;
-	[SerializeField] private GameObject mainMenuButton;
 
 	private Animator animator;
-	private bool selected;
 
 	void Start()
 	{
 		animator = gameObject.GetComponent<Animator>();
 		total.text = GameController.instance.Score.ToString();
-
 	}
 
-	private void Update()
-	{
-		if (!selected) {
-			selected = true;
-			EventSystem.current.SetSelectedGameObject(mainMenuButton);
-		}
-	}
 
 	public void CallLoadLevel(string name)
 	{

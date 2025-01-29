@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -57,9 +56,12 @@ public class BubbleSpawner : MonoBehaviour
 	}
 
 	private void SpawnBubble() {
-		transformXPosition = Random.Range(spawnerMinRange, spawnerMaxRange);
-		lastBubble = Instantiate(bubblePrefab, new Vector3(transformXPosition, 6, 1), Quaternion.identity).transform;
-		lastBubble.transform.parent = this.transform;
-		transforms.Add(lastBubble);
+		if (GameController.instance.TotalBubbles > 0)
+		{
+			transformXPosition = Random.Range(spawnerMinRange, spawnerMaxRange);
+			lastBubble = Instantiate(bubblePrefab, new Vector3(transformXPosition, 6, 1), Quaternion.identity).transform;
+			lastBubble.transform.parent = this.transform;
+			transforms.Add(lastBubble);
+		}
 	}
 }

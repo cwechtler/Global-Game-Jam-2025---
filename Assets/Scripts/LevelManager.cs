@@ -19,7 +19,7 @@ public class LevelManager : MonoBehaviour {
 		[SerializeField] private bool forReactApp = false;
 		[Space]
 		[ConditionalHide("forReactApp", true, true)]
-		[Tooltip("For browser session storage. Uncheck to set URL manually")]
+		[Tooltip("For browser session storage. Uncheck to set URL manually. ")]
 		[SerializeField] private bool setSessionStorageGameQuitURL = true;
 
 		[ConditionalHide(conditionalSourceFields: new string[] { "setSessionStorageGameQuitURL", "forReactApp" }, conditionalSourceFieldInverseBools: new bool[] { false, true }, hideInInspector: true, inverse: false)]
@@ -27,6 +27,7 @@ public class LevelManager : MonoBehaviour {
 		[SerializeField] private string sessionStorageItem;
 		[Space]
 		[ConditionalHide(conditionalSourceFields: new string[] { "setSessionStorageGameQuitURL", "forReactApp" },true, true, true)]
+		[Tooltip("Where to redirect on Quit.  *** Not applicable if for React app or setting session storage quit URL. ***")]
 		[SerializeField] private string webglQuitURL = "about:blank";
 	#endif
 

@@ -1,27 +1,25 @@
-using Newtonsoft.Json.Linq;
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 public class ParticleController : MonoBehaviour
 {
+	[Tooltip("Max amount of particles to emit")]
 	[SerializeField] private float maxRateOverTime = 30f;
-    [SerializeField] private AudioClip spraySound; // The sound to play when emitting particles
+	[Tooltip("The sound to play when emitting particles")]
+    [SerializeField] private AudioClip spraySound;
 
     private ParticleSystem myParticleSystem;
 	private ParticleSystem.MainModule main;
 	private ParticleSystem.EmissionModule emission; 
-    private AudioSource audioSource; // AudioSource to play the sound
+    private AudioSource audioSource;
 
     private float inputRightTrigger = 0;
-
 
 	void Start()
     {
 		myParticleSystem = GetComponent<ParticleSystem>();
 		main = myParticleSystem.main;
 		emission = myParticleSystem.emission;
-        audioSource = GetComponent<AudioSource>(); // Get the AudioSource component on the same GameObject
+        audioSource = GetComponent<AudioSource>();
     }
 
     void Update()
@@ -48,15 +46,11 @@ public class ParticleController : MonoBehaviour
 			inputRightTrigger = 0;
 		}
 
-		//Debug.Log(inputRightTrigger);
-		//main.startLifetime = inputRightTrigger * maxRateOverTime;
 		emission.rateOverTime = inputRightTrigger * maxRateOverTime;
-
 	}
 
 	private void PlaySprayAudio() {
-		// Play the spray sound if the particles are emitting
-		if (!audioSource.isPlaying)
+		if (!audioSource.isPlaying && !GameController.instance.isPaused)
 		{
 			audioSource.PlayOneShot(spraySound); // Play the sound when the emission starts
 		}

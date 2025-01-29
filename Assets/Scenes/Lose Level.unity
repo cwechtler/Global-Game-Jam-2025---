@@ -310,7 +310,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   total: {fileID: 478244726}
-  mainMenuButton: {fileID: 0}
 --- !u!114 &226045937
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1497,6 +1496,7 @@ GameObject:
   - component: {fileID: 1027987582}
   - component: {fileID: 1027987581}
   - component: {fileID: 1027987584}
+  - component: {fileID: 1027987585}
   m_Layer: 5
   m_Name: Main Menu Button
   m_TagString: Untagged
@@ -1538,7 +1538,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -1548,8 +1548,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9529412, g: 0.94509804, b: 0.011764706, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.3529412, g: 0.34901962, b: 0.69803923, a: 1}
+    m_SelectedColor: {r: 0.9529412, g: 0.94509804, b: 0.011764706, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
@@ -1629,6 +1629,18 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: c66d5791f18f50348a42f5ae15b9c47e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &1027987585
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1027987579}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5fc4ac8dd9848aa41955c4c41c21339c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
 --- !u!1 &1169647549
@@ -2118,7 +2130,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   m_Navigation:
-    m_Mode: 0
+    m_Mode: 1
     m_WrapAround: 0
     m_SelectOnUp: {fileID: 0}
     m_SelectOnDown: {fileID: 0}
@@ -2128,8 +2140,8 @@ MonoBehaviour:
   m_Colors:
     m_NormalColor: {r: 1, g: 1, b: 1, a: 1}
     m_HighlightedColor: {r: 0.9529412, g: 0.94509804, b: 0.011764706, a: 1}
-    m_PressedColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 1}
-    m_SelectedColor: {r: 1, g: 1, b: 1, a: 1}
+    m_PressedColor: {r: 0.3529412, g: 0.34901962, b: 0.69803923, a: 1}
+    m_SelectedColor: {r: 0.9529412, g: 0.94509804, b: 0.011764706, a: 1}
     m_DisabledColor: {r: 0.78431374, g: 0.78431374, b: 0.78431374, a: 0.5019608}
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1

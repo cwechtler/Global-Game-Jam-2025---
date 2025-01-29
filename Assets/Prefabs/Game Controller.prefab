@@ -43,3 +43,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7ad917e285d8c94a966f3e388b5813e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  totalBubbles: 10

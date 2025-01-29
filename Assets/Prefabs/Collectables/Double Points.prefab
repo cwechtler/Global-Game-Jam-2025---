@@ -280,7 +280,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 7302308112125411081}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 10061c084a484e545a1d6b6a437a406b, type: 3}
+  m_Script: {fileID: 11500000, guid: 59f3f2850b1fe074c93fee2b724fa737, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   doublePointsTimeAmount: 20

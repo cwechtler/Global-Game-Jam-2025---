@@ -5,7 +5,8 @@ public class Paddle : MonoBehaviour {
 	[SerializeField] private float paddlespeed = 10f;
 	[SerializeField] private int rotationDegrees = 30;
 	[SerializeField] private Transform nozzle;
-	[SerializeField] private Transform tail;
+	// Tail is being over ridden by the animator now.  Leaving this just in case we want to go back.
+	//[SerializeField] private Transform tail;
 	[Space]
 	[Header("Mouse Binding")]
 	[SerializeField] private float screenLeftLimit = -8f;
@@ -31,6 +32,7 @@ public class Paddle : MonoBehaviour {
 	}
 		
 	void Update () {
+		Debug.Log(GameController.instance.MouseControl);
 		if (GameController.instance.MouseControl){
 			MoveWithMouse();
 			Rotate(true);
@@ -63,8 +65,9 @@ public class Paddle : MonoBehaviour {
 		float inputZ = Input.GetAxis(invert ? "Horizontal" : "Horizontal2");
 		nozzle.localEulerAngles = new Vector3(0, 0, inputZ * rotationDegrees);
 
-		// Remap inputZ (-1 to 1) to (-60 to 0) for Whale Tail
-		float mappedRotation = Mathf.Lerp(-60f, 0f, (inputZ + 1) / 2f);
-		tail.localEulerAngles = new Vector3(0, 0, mappedRotation);
+		// Tail is being over ridden by the animator now.  Leaving this just in case we want to go back.
+		//// Remap inputZ (-1 to 1) to (-60 to 0) for Whale Tail
+		//float mappedRotation = Mathf.Lerp(-60f, 0f, (inputZ + 1) / 2f);
+		//tail.localEulerAngles = new Vector3(0, 0, mappedRotation);
 	}
 }

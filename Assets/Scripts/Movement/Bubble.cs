@@ -30,7 +30,7 @@ public class Bubble : MonoBehaviour
 	{
 		if (!collision.gameObject.CompareTag("Bubble"))
 		{
-			GameController.instance.whaleCryCounter--;
+			GameController.instance.WhaleCryCounter--;
 			collisionsAllowed--;
 			if (collisionsAllowed == 0)
 			{
@@ -42,9 +42,8 @@ public class Bubble : MonoBehaviour
 				audioSource.PlayOneShot(clip);
 				circleCollider2D.enabled = false;
 
-				if (GameController.instance.whaleCryCounter <= 0)
+				if (GameController.instance.WhaleCryCounter <= 0)
 				{
-					Debug.Log(clip.length);
 					 StartCoroutine(PlayWhaleSound(clip.length - .2f));		
 				}
 
@@ -58,10 +57,8 @@ public class Bubble : MonoBehaviour
 	}
 
 	private IEnumerator PlayWhaleSound(float time) {
-		Debug.Log("play Whale sound");
-		GameController.instance.whaleCryCounter = 4;
+		GameController.instance.WhaleCryCounter = 4;
 		yield return new WaitForSeconds(time);
-		Debug.Log("playing Whale sound");
 		SoundManager.instance.WhaleCry();
 	}
 

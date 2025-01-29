@@ -12,12 +12,12 @@ public class SoundManager : MonoBehaviour {
 	[Space]
 	[SerializeField] private AudioClip[] music;
 	[SerializeField] private AudioClip[] ambientClips;
-	[SerializeField] private AudioClip[] movementClips;
-	[Space]
-	[SerializeField] private AudioClip buttonClick;
+	//[SerializeField] private AudioClip[] movementClips;
 	[SerializeField] private AudioClip[] bubblePops;
 	[Space]
+	[SerializeField] private AudioClip buttonClick;
 	[SerializeField] private AudioClip scoreClip;
+	[Space]
 	[SerializeField] private AudioClip doubleScoreClip;
 	[SerializeField] private AudioClip massBubblesClip;
 	[SerializeField] private AudioClip extraWhaleClip;
@@ -173,16 +173,16 @@ public class SoundManager : MonoBehaviour {
 		SFXAudioSource.PlayOneShot(clip, 1f);
 	}
 
-	public void PlayWalkClip() {
-		SFXAudioSource.pitch = 1f;
-		SFXAudioSource.PlayOneShot(movementClips[1], .2f);
-	}
+	//public void PlayWalkClip() {
+	//	SFXAudioSource.pitch = 1f;
+	//	SFXAudioSource.PlayOneShot(movementClips[1], .2f);
+	//}
 
-	public void PlayRunClip()
-	{
-		SFXAudioSource.pitch = 1f;
-		SFXAudioSource.PlayOneShot(movementClips[2], .2f);
-	}
+	//public void PlayRunClip()
+	//{
+	//	SFXAudioSource.pitch = 1f;
+	//	SFXAudioSource.PlayOneShot(movementClips[2], .2f);
+	//}
 
 	public void PlayDestructibleSound(AudioClip clip)
 	{
